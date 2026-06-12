@@ -20,8 +20,12 @@ const createMessageId = () => {
   return `message_${Date.now()}_${suffix}`;
 };
 
-export async function onRequestPost({ request }) {
+export async function onRequest({ request }) {
   try {
+    if (request.method !== "POST") {
+      return jsonResponse({ error: "METHOD_NOT_ALLOWED" }, 405);
+    }
+
     const contentType = request.headers.get("content-type") || "";
     if (!contentType.includes("application/json")) {
       return jsonResponse({ error: "UNSUPPORTED_CONTENT_TYPE" }, 415);
@@ -66,8 +70,4 @@ export async function onRequestPost({ request }) {
       storageMissing ? 503 : 500
     );
   }
-}
-
-export function onRequest() {
-  return jsonResponse({ error: "METHOD_NOT_ALLOWED" }, 405);
 }
