@@ -20,7 +20,7 @@ const createMessageId = () => {
   return `message_${Date.now()}_${suffix}`;
 };
 
-export async function onRequest({ request }) {
+export async function onRequest({ request, env }) {
   try {
     if (request.method !== "POST") {
       return jsonResponse({ error: "METHOD_NOT_ALLOWED" }, 405);
@@ -48,22 +48,27 @@ export async function onRequest({ request }) {
       return jsonResponse({ error: "INVALID_EMAIL" }, 400);
     }
 
-    const id = createMessageId();
-    const record = {
-      id,
-      name,
-      email,
-      message,
-      createdAt: new Date().toISOString(),
-    };
+    if (!env?.guestbook_messages) {
+      return jsonResponse({ error: "MESSAGE_STORAGE_NOT_CONFIGURED" }, 503);
+    }
 
-    await guestbook_messages.put(id, JSON.stringify(record));
+    const id = createMessageId();
+    const createdAt = new Date().toISOString();
+
+    await env.guestbook_messages
+      .prepare(
+        `INSERT INTO guestbook_messages
+          (id, name, email, message, created_at, status)
+         VALUES (?, ?, ?, ?, ?, ?)`
+      )
+      .bind(id, name, email || null, message, createdAt, "unread")
+      .run();
+
     return jsonResponse({ ok: true, id }, 201);
   } catch (error) {
     console.error("Guestbook submission failed", error);
     const storageMissing =
-      typeof guestbook_messages === "undefined" ||
-      /not defined|namespace|storage|binding/i.test(String(error?.message || error));
+      /not defined|database|no such table|storage|binding/i.test(String(error?.message || error));
 
     return jsonResponse(
       { error: storageMissing ? "MESSAGE_STORAGE_NOT_CONFIGURED" : "MESSAGE_SUBMISSION_FAILED" },

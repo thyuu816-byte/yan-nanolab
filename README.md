@@ -2,6 +2,16 @@
 
 华东理工大学机械与动力工程学院闫亚宾教授课题组网站。
 
+## Cloudflare Pages
+
+网站可直接由 Cloudflare Pages 从仓库根目录部署，无需构建命令。
+
+留言板使用 Pages Functions 和 D1：
+
+1. 创建 D1 数据库并执行 `schema.sql`。
+2. 在 Pages 项目的设置中添加 D1 绑定，变量名为 `guestbook_messages`。
+3. 重新部署网站。
+
 ## EdgeOne Pages 部署
 
 - 框架预设：静态网站 / Other
