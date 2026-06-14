@@ -111,9 +111,10 @@ window.teamMembers = {
     },
     {
       name: "周一峰",
+      photo: "./assets/team/zhou-yifeng.jpg?v=20260614",
       level: "25级硕士研究生",
       degree: "master",
-      research: "待补充",
+      research: "结构疲劳与寿命预测",
       interests: "音乐、游泳、游戏",
       destination: "在读",
       contact: "1220529751@qq.com",

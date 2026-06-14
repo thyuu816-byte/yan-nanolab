@@ -1,4 +1,3 @@
-const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const sectionNavigator = document.querySelector(".section-navigator");
@@ -11,6 +10,9 @@ const heroDots = Array.from(document.querySelectorAll("[data-hero-dot]"));
 const heroPrev = document.querySelector("[data-hero-prev]");
 const heroNext = document.querySelector("[data-hero-next]");
 const teamRoot = document.querySelector("[data-team-root]");
+const memberModal = document.querySelector("[data-member-modal]");
+const memberModalContent = document.querySelector("[data-member-modal-content]");
+const memberModalCloseButtons = Array.from(document.querySelectorAll("[data-member-close]"));
 const guestbookForm = document.querySelector(".guestbook-form");
 const languageToggle = document.querySelector("[data-language-toggle]");
 const languageButtons = Array.from(document.querySelectorAll("[data-lang-option]"));
@@ -39,6 +41,7 @@ const languageText = {
   "展开章节导航": "Open section navigation",
   "收起章节导航": "Close section navigation",
   "页面导航": "Page Navigation",
+  "关闭成员详情": "Close member details",
   "首页": "Home",
   "论文与项目": "Publications & Projects",
   "华东理工大学 · 机械与动力工程学院": "East China University of Science and Technology · School of Mechanical and Power Engineering",
@@ -161,6 +164,8 @@ const languageText = {
   "陈汉": "Chen Han",
   "汪增辉": "Wang Zenghui",
   "周一峰": "Zhou Yifeng",
+  "结构疲劳与寿命预测": "Structural fatigue and life prediction",
+  "音乐、游泳、游戏": "Music, swimming, gaming",
   "王祎珩": "Wang Yiheng",
   "吴昊": "Wu Hao",
   "董亚辉": "Dong Yahui",
@@ -314,6 +319,7 @@ const attributeTranslations = {
       [".section-navigator", "aria-label", "Page section navigation"],
       [".section-nav-toggle", "aria-label", "Open section navigation"],
       [".section-nav-panel", "aria-label", "Section navigation"],
+      [".member-modal-close", "aria-label", "Close member details"],
       [".hero", "aria-label", "Research group homepage hero"],
       [".hero-slider", "aria-label", "Research group photo carousel"],
       [".hero-tags", "aria-label", "Research keywords"],
@@ -352,6 +358,7 @@ const attributeTranslations = {
       [".section-navigator", "aria-label", "页面章节导航"],
       [".section-nav-toggle", "aria-label", "展开章节导航"],
       [".section-nav-panel", "aria-label", "章节导航"],
+      [".member-modal-close", "aria-label", "关闭成员详情"],
       [".hero", "aria-label", "课题组首页横幅"],
       [".hero-slider", "aria-label", "课题组照片轮播"],
       [".hero-tags", "aria-label", "研究关键词"],
@@ -530,21 +537,6 @@ easterEggButtons.forEach((button, index) => {
 
 easterEggCloseButtons.forEach((button) => button.addEventListener("click", closeEasterEggModal));
 
-if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!isOpen));
-    siteNav.classList.toggle("is-open", !isOpen);
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navToggle.setAttribute("aria-expanded", "false");
-      siteNav.classList.remove("is-open");
-    });
-  });
-}
-
 const closeSectionNavigator = () => {
   sectionNavigator?.classList.remove("is-open");
   sectionNavToggle?.setAttribute("aria-expanded", "false");
@@ -621,11 +613,6 @@ const createDetailItem = (label, value, isEmail = false) => {
 };
 
 const resetTeamDetail = (panel) => {
-  const roster = panel?.querySelector("[data-team-list]");
-  const detail = panel?.querySelector("[data-team-detail]");
-  if (!roster || !detail) return;
-  roster.hidden = false;
-  detail.hidden = true;
   panel.classList.remove("is-viewing-member");
 };
 
@@ -640,15 +627,9 @@ const activateTeamPanel = (group, resetDetails = true) => {
 };
 
 const showMemberDetail = (group, member) => {
-  if (!teamRoot) return;
-  activateTeamPanel(group, false);
-  const panel = teamRoot.querySelector(`[data-team-group="${group}"]`);
-  const roster = panel?.querySelector("[data-team-list]");
-  const detail = panel?.querySelector("[data-team-detail]");
-  const content = detail?.querySelector("[data-team-detail-content]");
-  if (!panel || !roster || !detail || !content) return;
-
-  content.replaceChildren();
+  if (!memberModal || !memberModalContent) return;
+  lastFocusedElement = document.activeElement;
+  memberModalContent.replaceChildren();
 
   const hero = document.createElement("div");
   hero.className = "member-detail-hero";
@@ -656,6 +637,7 @@ const showMemberDetail = (group, member) => {
 
   const heading = document.createElement("div");
   const name = document.createElement("h3");
+  name.id = "member-modal-title";
   name.textContent = member.name;
   const level = document.createElement("p");
   level.textContent = member.level || "资料待补充";
@@ -671,14 +653,21 @@ const showMemberDetail = (group, member) => {
     createDetailItem("联系方式", member.contact, true)
   );
 
-  content.append(hero, details);
-  applyLanguage(content);
-  roster.hidden = true;
-  detail.hidden = false;
-  panel.classList.add("is-viewing-member");
-  detail.scrollTop = 0;
-  detail.querySelector("[data-team-back]")?.focus();
+  memberModalContent.append(hero, details);
+  applyLanguage(memberModalContent);
+  memberModal.hidden = false;
+  document.body.classList.add("is-modal-open");
+  memberModal.querySelector(".member-modal-close")?.focus();
 };
+
+const closeMemberModal = () => {
+  if (!memberModal || memberModal.hidden) return;
+  memberModal.hidden = true;
+  document.body.classList.remove("is-modal-open");
+  lastFocusedElement?.focus?.({ preventScroll: true });
+};
+
+memberModalCloseButtons.forEach((button) => button.addEventListener("click", closeMemberModal));
 
 const createMemberCard = (group, member) => {
   const card = document.createElement("button");
@@ -761,10 +750,6 @@ const renderTeam = () => {
       resetTeamDetail(panel);
     });
 
-    panel.querySelector("[data-team-back]")?.addEventListener("click", () => {
-      resetTeamDetail(panel);
-      list.querySelector(".member-card")?.focus();
-    });
   });
 };
 
@@ -812,7 +797,11 @@ guestbookForm?.addEventListener("submit", async (event) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (sectionNavigator?.classList.contains("is-open") && !sectionNavigator.contains(event.target)) {
+  if (
+    sectionNavigator?.classList.contains("is-open") &&
+    !sectionNavigator.contains(event.target) &&
+    !sectionNavToggle?.contains(event.target)
+  ) {
     closeSectionNavigator();
   }
 });
@@ -826,10 +815,11 @@ document.addEventListener("keydown", (event) => {
     closeNewsModal();
     return;
   }
-  if (event.key === "Escape") closeSectionNavigator();
-  if (event.key === "Escape") {
-    teamRoot?.querySelectorAll(".team-panel.is-viewing-member").forEach(resetTeamDetail);
+  if (event.key === "Escape" && memberModal && !memberModal.hidden) {
+    closeMemberModal();
+    return;
   }
+  if (event.key === "Escape") closeSectionNavigator();
 });
 
 const showHeroSlide = (index) => {

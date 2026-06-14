@@ -29,37 +29,35 @@
             <a href="#news">新闻动态</a>
             <a href="#guestbook">留言板</a>
           </nav>
+          <button
+            class="section-nav-toggle"
+            type="button"
+            aria-label="展开章节导航"
+            aria-controls="section-nav-panel"
+            aria-expanded="false"
+          >
+            <span class="section-current" aria-live="polite">首页</span>
+            <span class="section-menu-icon" aria-hidden="true">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </button>
           <div class="language-switch" data-language-toggle aria-label="语言切换">
             <button class="is-active" type="button" data-lang-option="zh" aria-pressed="true">中</button>
             <span aria-hidden="true">/</span>
             <button type="button" data-lang-option="en" aria-pressed="false">EN</button>
           </div>
-          <button class="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </div>
     </header>
 
     <aside class="section-navigator" aria-label="页面章节导航">
-      <div class="section-nav-rail">
-        <button
-          class="section-nav-toggle"
-          type="button"
-          aria-label="展开章节导航"
-          aria-controls="section-nav-panel"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <span class="section-current" aria-live="polite">首页</span>
-      </div>
       <nav class="section-nav-panel" id="section-nav-panel" aria-label="章节导航">
-        <div class="section-nav-title">页面导航</div>
+        <div class="section-nav-title">
+          <span>页面导航</span>
+          <small>SECTIONS</small>
+        </div>
         <a class="active" href="#home" data-section-label="首页">
           <span>01</span>
           <strong>首页</strong>
@@ -301,13 +299,6 @@
               </button>
               <div class="team-panel-body">
                 <div class="member-roster" data-team-list="current"></div>
-                <article class="member-detail" data-team-detail="current" hidden>
-                  <button class="member-back" type="button" data-team-back>
-                    <span aria-hidden="true">←</span>
-                    返回成员列表
-                  </button>
-                  <div data-team-detail-content></div>
-                </article>
               </div>
             </section>
 
@@ -321,18 +312,24 @@
               </button>
               <div class="team-panel-body">
                 <div class="member-roster" data-team-list="alumni"></div>
-                <article class="member-detail" data-team-detail="alumni" hidden>
-                  <button class="member-back" type="button" data-team-back>
-                    <span aria-hidden="true">←</span>
-                    返回成员列表
-                  </button>
-                  <div data-team-detail-content></div>
-                </article>
               </div>
             </section>
           </div>
         </div>
       </section>
+
+      <div class="member-modal" data-member-modal hidden>
+        <div class="member-modal-backdrop" data-member-close></div>
+        <article
+          class="member-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="member-modal-title"
+        >
+          <button class="member-modal-close" type="button" data-member-close aria-label="关闭成员详情">×</button>
+          <div data-member-modal-content></div>
+        </article>
+      </div>
 
       <section class="section section-band" id="publications">
         <div class="container publications-layout">
