@@ -273,8 +273,8 @@ window.teamMembers = {
     {
       name: "许国庆",
       level: "20级硕士研究生",
-      research: "待补充",
-      interests: "待补充",
+      research: "  ",
+      interests: "  ",
       destination: "上海凯赛生物技术股份有限公司",
       contact: "358894336@qq.com",
     },
@@ -296,11 +296,11 @@ window.teamMembers = {
     },
     {
       name: "向名芝",
-      level: "资料待补充",
-      research: "待补充",
-      interests: "待补充",
-      destination: "待补充",
-      contact: "",
+      level: "19级硕士研究生",
+      research: "  ",
+      interests: "  ",
+      destination: "  ",
+      contact: "  ",
     },
     {
       name: "李晟",
