@@ -151,6 +151,8 @@ const languageText = {
   "提交留言": "Submit",
   "© 2026 闫亚宾教授课题组 · 华东理工大学机械与动力工程学院":
     "© 2026 Yan Yabin Research Group · School of Mechanical and Power Engineering, ECUST",
+  "你是本站第": "You are visitor No.",
+  "个访客": "",
   "教师主页": "Faculty Profile",
   "返回顶部": "Back to Top",
   "研究方向配图来源：": "Research image credits:",
@@ -659,12 +661,21 @@ const showMemberDetail = (group, member) => {
 
   const details = document.createElement("dl");
   details.className = "member-detail-grid";
-  details.append(
-    createDetailItem("研究方向", member.research),
-    createDetailItem("兴趣爱好", member.interests),
-    createDetailItem(group === "current" ? "当前状态" : "毕业去向", member.destination),
-    createDetailItem("联系方式", member.contact, true)
-  );
+  const detailItems =
+    group === "alumni"
+      ? [
+          createDetailItem("毕业去向", member.destination),
+          createDetailItem("研究方向", member.research),
+          createDetailItem("兴趣爱好", member.interests),
+          createDetailItem("联系方式", member.contact, true),
+        ]
+      : [
+          createDetailItem("研究方向", member.research),
+          createDetailItem("兴趣爱好", member.interests),
+          createDetailItem("当前状态", member.destination),
+          createDetailItem("联系方式", member.contact, true),
+        ];
+  details.append(...detailItems);
 
   content.append(hero, details);
   applyLanguage(content);
@@ -693,7 +704,7 @@ const createMemberCard = (group, member) => {
   const name = document.createElement("strong");
   name.textContent = member.name;
   const level = document.createElement("span");
-  level.textContent = member.level || "资料待补充";
+  level.textContent = group === "alumni" ? member.destination || "待补充" : member.level || "资料待补充";
   copy.append(name, level);
 
   const expandIcon = document.createElement("span");
