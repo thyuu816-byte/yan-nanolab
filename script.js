@@ -139,10 +139,23 @@ const languageText = {
   "苏婷同学作博士学位论文答辩报告": "Su Ting presenting her doctoral dissertation defense",
   "苏婷同学与闫亚宾老师合影": "Su Ting with Prof. Yabin Yan",
   "答辩现场合影": "Group photo after the defense",
-  "恭喜22级硕博研究生万拾佳的论文被Acta Materialia期刊接收！":
-    "Congratulations to Wan Shijia, a 2022 M.S.-Ph.D. track student, whose paper has been accepted by Acta Materialia!",
-  "祝贺万拾佳同学的研究工作被 Acta Materialia 期刊接收。":
-    "Congratulations to Wan Shijia on the acceptance of this research work by Acta Materialia.",
+  "单晶锡微尺度塑性研究发表在 Acta Materialia":
+    "Microscale plasticity study of single-crystal tin published in Acta Materialia",
+  "点击查看论文信息与研究亮点。": "View paper information and research highlights.",
+  "近日，课题组闫亚宾教授、22级硕博研究生万拾佳等合作完成的研究论文 “":
+    "Recently, the paper completed by Prof. Yabin Yan, 2022 M.S.-Ph.D. track student Shijia Wan, and collaborators, titled \"",
+  "” 发表在 Acta Materialia, 316 (2026) 122458。":
+    "\", was published in Acta Materialia, 316 (2026) 122458.",
+  "β-Sn 是典型的低熔点、低对称性金属，其微尺度塑性变形机制与应变率、加载方式和几何尺度密切相关，对电子封装、微纳结构和低熔点金属服役可靠性具有重要意义。然而，此类材料在微尺度下的位错运动、蠕变损伤与应变梯度效应之间的耦合关系仍有待深入理解。":
+    "β-Sn is a typical low-melting-point, low-symmetry metal. Its microscale plastic deformation is closely related to strain rate, loading mode, and geometry, and is important for the reliability of electronic packaging, micro/nano structures, and low-melting-point metals in service. However, the coupled relation among dislocation motion, creep damage, and strain-gradient effects in this class of materials remains to be understood.",
+  "该研究通过原位 SEM 微拉伸实验和微悬臂梁弯曲实验，系统考察了单晶 β-Sn 在不同应变速率下的塑性行为与应变梯度效应。结果表明，两种加载方式下均激活了 (101)-[101] 滑移系，但具体变形机制同时受到应变率和加载模式影响。":
+    "Using in-situ SEM micro-tensile tests and micro-cantilever bending experiments, the study systematically examined the plastic behavior and strain-gradient effects of single-crystal β-Sn under different strain rates. The results show that the (101)-[101] slip system is activated in both loading modes, while the deformation mechanism is affected by both strain rate and loading mode.",
+  "在较高应变率下，材料变形主要由位错滑移主导；在较低应变率下，微拉伸试样表现出明显的蠕变损伤，而微弯曲试样中的损伤受到抑制，这与陡峭应力梯度和表面效应有关。研究还发现，弯曲条件下的显著强化来源于几何必要位错的累积。":
+    "At higher strain rates, deformation is mainly governed by dislocation slip. At lower strain rates, micro-tensile specimens show pronounced creep damage, while such damage is suppressed in micro-bending specimens because of the steep stress gradient and surface effects. The study also shows that the significant strengthening under bending originates from the accumulation of geometrically necessary dislocations.",
+  "通过对表面滑移台阶的定量分析，研究揭示了位错塞积引起的背应力与台阶高度平方根之间的标度关系；应变率敏感性指数 m = 0.043-0.046 以及激活体积分析进一步表明，单晶 β-Sn 的变形机制会从低速率下的扩散辅助攀移动态转变为高速率下的热激活滑移。":
+    "Quantitative analysis of surface slip steps reveals a scaling relation between the back stress caused by dislocation pile-ups and the square root of step height. The strain-rate sensitivity m = 0.043-0.046 and activation-volume analysis further indicate a dynamic transition from diffusion-assisted climb at low rates to thermally activated slip at high rates in single-crystal β-Sn.",
+  "该工作为理解低熔点金属在微尺度下的扩散控制损伤、梯度诱导强化和加载方式相关应力分布提供了新的实验依据，也为微纳金属结构和电子互连材料的可靠性评估提供了重要参考。":
+    "This work provides new experimental evidence for understanding diffusion-controlled damage, gradient-induced hardening, and loading-dependent stress distributions in low-melting-point metals at the microscale. It also offers useful guidance for reliability assessment of micro/nanoscale metal structures and electronic interconnect materials.",
   "恭喜23级五位硕士毕业生顺利毕业": "Congratulations to the Five 2023 Master's Graduates",
   "点击查看毕业合影与祝福。": "View graduation photos and congratulations.",
   "恭喜王祎珩、吴昊、董亚辉、徐渝京、史春浩顺利毕业，预祝苏婷顺利毕业！":
@@ -182,6 +195,8 @@ const languageText = {
   "原文链接：": "Original article: ",
   "图示：论文页面、研究概述及单层 Ti": "Figure: article page, research overview, and in-plane shear test schematic for monolayer Ti",
   " 纳米片面内剪切测试示意。": " nanosheets.",
+  "图示：论文发表于 Acta Materialia, 316 (2026) 122458，研究围绕单晶 β-Sn 的应变率效应与应变梯度效应展开。":
+    "Figure: the paper was published in Acta Materialia, 316 (2026) 122458, and focuses on strain-rate effects and strain-gradient effects in single-crystal β-Sn.",
   "相关工作发表在 Nature Communications，后续可补充新闻链接与论文图片。":
     "The related work was published in Nature Communications. News links and paper images can be added later.",
   "欢迎相关专业同学报考交流": "Prospective Students Are Welcome",
@@ -407,6 +422,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
+      [".paper-detail-figure img", "alt", "Acta Materialia article page on single-crystal tin plasticity"],
       [".nc-detail-figure img", "alt", "Nature Communications article details and experimental schematic"],
     ],
   },
@@ -458,6 +474,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
+      [".paper-detail-figure img", "alt", "Acta Materialia 单晶锡塑性论文首页"],
       [".nc-detail-figure img", "alt", "Nature Communications论文详情与实验示意图"],
     ],
   },
