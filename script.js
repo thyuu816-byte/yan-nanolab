@@ -127,6 +127,18 @@ const languageText = {
   "2025-至今": "2025-Present",
   "ResearchGate 主页": "ResearchGate Profile",
   "2021及以前": "2021 and Earlier",
+  "恭喜苏婷同学顺利通过博士学位论文答辩！":
+    "Congratulations to Su Ting on Successfully Passing Her Doctoral Dissertation Defense!",
+  "点击查看答辩现场照片与祝福。": "View defense photos and congratulations.",
+  "热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。":
+    "Warm congratulations to Su Ting on successfully completing her doctoral dissertation defense and bringing her doctoral journey to a wonderful conclusion.",
+  "答辩过程中，苏婷同学围绕二维材料力学性能与可靠性相关研究进行了系统汇报，充分展示了扎实的科研积累、严谨的学术态度和持续探索的研究精神。":
+    "During the defense, Su Ting gave a systematic presentation on the mechanical properties and reliability of two-dimensional materials, demonstrating solid research training, rigorous academic thinking, and a spirit of sustained exploration.",
+  "从课题攻关到论文写作，从实验分析到答辩展示，每一步都凝结着长期坚持与认真投入。祝愿苏婷同学在未来的科研与人生道路上继续保持热爱与笃定，步履从容，前程似锦，开启更加精彩的新篇章！":
+    "From research challenges to dissertation writing, and from experimental analysis to the final defense, every step reflects long-term dedication and careful effort. We wish Su Ting continued passion and confidence in her future research and life, with a bright path ahead and many new chapters to come.",
+  "苏婷同学作博士学位论文答辩报告": "Su Ting presenting her doctoral dissertation defense",
+  "苏婷同学与闫亚宾老师合影": "Su Ting with Prof. Yabin Yan",
+  "答辩现场合影": "Group photo after the defense",
   "恭喜22级硕博研究生万拾佳的论文被Acta Materialia期刊接收！":
     "Congratulations to Wan Shijia, a 2022 M.S.-Ph.D. track student, whose paper has been accepted by Acta Materialia!",
   "祝贺万拾佳同学的研究工作被 Acta Materialia 期刊接收。":
@@ -156,6 +168,20 @@ const languageText = {
   "网站内容持续整理中，欢迎补充团队照片、组会动态、论文封面和招生通知。":
     "Website content is still being organized. Team photos, meeting updates, paper covers, and admission notices are welcome.",
   "二维薄膜剪切失稳相关研究发表": "Study on Shear Instability of 2D Films Published",
+  "二维 Ti": "2D Ti",
+  " MXene 单层纳米片剪切性能研究发表在 Nature Communications":
+    " MXene Monolayer Shear Study Published in Nature Communications",
+  "点击查看论文详情与研究亮点。": "View paper details and research highlights.",
+  "近日，课题组相关合作研究成果以“": "Recently, collaborative research from the group, titled \"",
+  "”为题发表在 Nature Communications。": "\", was published in Nature Communications.",
+  "该研究首次实现了 Ti": "This study achieved the first nanoscale in-situ shear test of Ti",
+  " 单层纳米片的纳米尺度原位剪切测试，并结合分子动力学模拟和第一性原理计算，从实验与原子尺度共同揭示了二维材料在剪切载荷下的损伤起源和稳定抗皱机制。":
+    " monolayer nanosheets, combining molecular dynamics simulations and first-principles calculations to reveal the damage origin and stable wrinkle-resistance mechanism of 2D materials under shear loading.",
+  "论文由华东理工大学与合作单位共同完成。荣超、苏婷、余天昊为共同第一作者，闫亚宾、张博威、轩福贞为共同通讯作者。":
+    "The paper was completed by East China University of Science and Technology and collaborators. Chao Rong, Ting Su, and Tianhao Yu are co-first authors; Yabin Yan, Bowei Zhang, and Fu-Zhen Xuan are co-corresponding authors.",
+  "原文链接：": "Original article: ",
+  "图示：论文页面、研究概述及单层 Ti": "Figure: article page, research overview, and in-plane shear test schematic for monolayer Ti",
+  " 纳米片面内剪切测试示意。": " nanosheets.",
   "相关工作发表在 Nature Communications，后续可补充新闻链接与论文图片。":
     "The related work was published in Nature Communications. News links and paper images can be added later.",
   "欢迎相关专业同学报考交流": "Prospective Students Are Welcome",
@@ -371,12 +397,17 @@ const attributeTranslations = {
       [".graduation-gallery img:nth-child(1)", "alt", "The 2023 master's graduates with Prof. Yabin Yan"],
       [".graduation-gallery img:nth-child(2)", "alt", "Research group graduation photo in front of the Mao Zedong statue"],
       [".graduation-gallery img:nth-child(3)", "alt", "Research group graduation photo at the university gate"],
-      [".conference-gallery", "aria-label", "Conference photos"],
-      [".conference-gallery figure:nth-child(1) img", "alt", "Group photo of ESIA18-ISSI2026 participants"],
-      [".conference-gallery figure:nth-child(2) img", "alt", "Su Ting presenting in a technical session"],
-      [".conference-gallery figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
-      [".conference-gallery figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
-      [".conference-gallery figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
+      [".defense-gallery", "aria-label", "Su Ting defense photos"],
+      [".defense-gallery figure:nth-child(1) img", "alt", "Su Ting presenting her doctoral dissertation defense"],
+      [".defense-gallery figure:nth-child(2) img", "alt", "Su Ting with Prof. Yabin Yan after the defense"],
+      [".defense-gallery figure:nth-child(3) img", "alt", "Group photo after Su Ting's doctoral dissertation defense"],
+      [".conference-gallery:not(.defense-gallery)", "aria-label", "Conference photos"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(1) img", "alt", "Group photo of ESIA18-ISSI2026 participants"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(2) img", "alt", "Su Ting presenting in a technical session"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
+      [".nc-detail-figure img", "alt", "Nature Communications article details and experimental schematic"],
     ],
   },
   zh: {
@@ -417,12 +448,17 @@ const attributeTranslations = {
       [".graduation-gallery img:nth-child(1)", "alt", "23级硕士毕业生与闫亚宾老师合影"],
       [".graduation-gallery img:nth-child(2)", "alt", "课题组毕业季毛主席像前合影"],
       [".graduation-gallery img:nth-child(3)", "alt", "课题组毕业季校门合影"],
-      [".conference-gallery", "aria-label", "会议现场照片"],
-      [".conference-gallery figure:nth-child(1) img", "alt", "ESIA18-ISSI2026参会人员合影"],
-      [".conference-gallery figure:nth-child(2) img", "alt", "苏婷作分会场报告"],
-      [".conference-gallery figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
-      [".conference-gallery figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
-      [".conference-gallery figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
+      [".defense-gallery", "aria-label", "苏婷答辩现场照片"],
+      [".defense-gallery figure:nth-child(1) img", "alt", "苏婷同学作博士学位论文答辩报告"],
+      [".defense-gallery figure:nth-child(2) img", "alt", "苏婷同学与闫亚宾老师合影"],
+      [".defense-gallery figure:nth-child(3) img", "alt", "苏婷同学博士学位论文答辩现场合影"],
+      [".conference-gallery:not(.defense-gallery)", "aria-label", "会议现场照片"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(1) img", "alt", "ESIA18-ISSI2026参会人员合影"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(2) img", "alt", "苏婷作分会场报告"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
+      [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
+      [".nc-detail-figure img", "alt", "Nature Communications论文详情与实验示意图"],
     ],
   },
 };

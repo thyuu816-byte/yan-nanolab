@@ -8,7 +8,7 @@
       name="description"
       content="华东理工大学机械与动力工程学院闫亚宾教授课题组，聚焦材料与结构可靠性、微纳尺度原位实验、功能材料设计与精密实验仪器开发。"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260625news" />
+    <link rel="stylesheet" href="./styles.css?v=20260708nc" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -118,12 +118,14 @@
           <span class="hero-news-label">课题组新闻</span>
           <div class="hero-news-window">
             <div class="hero-news-track">
+              <a href="#news"><time datetime="2026-07">2026.07</time> 恭喜苏婷同学顺利通过博士学位论文答辩！</a>
               <a href="#news"><time datetime="2026-06">2026.06</time> 恭喜22级硕博研究生万拾佳的论文被Acta Materialia期刊接收！</a>
               <a href="#news"><time datetime="2026-06">2026.06</time> 恭喜23级五位硕士毕业生顺利毕业</a>
               <a href="#news"><time datetime="2026-05">2026.05</time> 苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026</a>
               <a href="#news"><time datetime="2026-05">2026.05</time> 课题组网站上线试运行</a>
               <a href="#news"><time datetime="2026-03">2026.03</time> 二维薄膜剪切失稳相关研究发表</a>
               <a href="#news"><time datetime="2026-01">2026.01</time> 欢迎相关专业同学报考交流</a>
+              <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-07">2026.07</time> 恭喜苏婷同学顺利通过博士学位论文答辩！</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-06">2026.06</time> 恭喜22级硕博研究生万拾佳的论文被Acta Materialia期刊接收！</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-06">2026.06</time> 恭喜23级五位硕士毕业生顺利毕业</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-05">2026.05</time> 苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026</a>
@@ -572,6 +574,15 @@
           </div>
           <div class="news-list reveal">
             <article>
+              <time datetime="2026-07">2026.07</time>
+              <button class="news-card-button" type="button" data-news-modal-open="#su-ting-defense-news-modal">
+                <span>
+                  <strong>恭喜苏婷同学顺利通过博士学位论文答辩！</strong>
+                  <small>点击查看答辩现场照片与祝福。</small>
+                </span>
+              </button>
+            </article>
+            <article>
               <time datetime="2026-06">2026.06</time>
               <div class="news-copy">
                 <h3>恭喜22级硕博研究生万拾佳的论文被Acta Materialia期刊接收！</h3>
@@ -605,10 +616,12 @@
             </article>
             <article>
               <time datetime="2026-03">2026.03</time>
-              <div class="news-copy">
-                <h3>二维薄膜剪切失稳相关研究发表</h3>
-                <p>相关工作发表在 Nature Communications，后续可补充新闻链接与论文图片。</p>
-              </div>
+              <button class="news-card-button" type="button" data-news-modal-open="#nc-mxene-news-modal">
+                <span>
+                  <strong>二维 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> MXene 单层纳米片剪切性能研究发表在 Nature Communications</strong>
+                  <small>点击查看论文详情与研究亮点。</small>
+                </span>
+              </button>
             </article>
             <article>
               <time datetime="2026-01">2026.01</time>
@@ -620,6 +633,45 @@
           </div>
         </div>
       </section>
+
+      <div class="news-modal" id="su-ting-defense-news-modal" data-news-modal hidden>
+        <div class="news-modal-backdrop" data-news-modal-close></div>
+        <section
+          class="news-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="su-ting-defense-news-title"
+        >
+          <button class="news-modal-close" type="button" data-news-modal-close aria-label="关闭新闻弹窗">×</button>
+          <div class="news-modal-header">
+            <time datetime="2026-07">2026.07</time>
+            <h3 id="su-ting-defense-news-title">恭喜苏婷同学顺利通过博士学位论文答辩！</h3>
+            <p>热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。</p>
+          </div>
+          <div class="news-modal-body">
+            <p>
+              答辩过程中，苏婷同学围绕二维材料力学性能与可靠性相关研究进行了系统汇报，充分展示了扎实的科研积累、严谨的学术态度和持续探索的研究精神。
+            </p>
+            <p>
+              从课题攻关到论文写作，从实验分析到答辩展示，每一步都凝结着长期坚持与认真投入。祝愿苏婷同学在未来的科研与人生道路上继续保持热爱与笃定，步履从容，前程似锦，开启更加精彩的新篇章！
+            </p>
+          </div>
+          <div class="conference-gallery defense-gallery" aria-label="苏婷答辩现场照片">
+            <figure>
+              <img data-src="./assets/su-ting-defense-report.jpg?v=20260708" alt="苏婷同学作博士学位论文答辩报告" loading="lazy" decoding="async" />
+              <figcaption>苏婷同学作博士学位论文答辩报告</figcaption>
+            </figure>
+            <figure>
+              <img data-src="./assets/su-ting-defense-teacher.jpg?v=20260708" alt="苏婷同学与闫亚宾老师合影" loading="lazy" decoding="async" />
+              <figcaption>苏婷同学与闫亚宾老师合影</figcaption>
+            </figure>
+            <figure>
+              <img data-src="./assets/su-ting-defense-group.jpg?v=20260708" alt="苏婷同学博士学位论文答辩现场合影" loading="lazy" decoding="async" />
+              <figcaption>答辩现场合影</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
 
       <div class="news-modal" id="graduation-news-modal" data-news-modal hidden>
         <div class="news-modal-backdrop" data-news-modal-close></div>
@@ -689,6 +741,44 @@
               <img data-src="./assets/esia2026-auditorium.jpg?v=20260625" alt="ESIA18-ISSI2026大会报告现场" loading="lazy" decoding="async" />
               <figcaption>大会报告现场</figcaption>
             </figure>
+          </div>
+        </section>
+      </div>
+
+      <div class="news-modal" id="nc-mxene-news-modal" data-news-modal hidden>
+        <div class="news-modal-backdrop" data-news-modal-close></div>
+        <section
+          class="news-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="nc-mxene-news-title"
+        >
+          <button class="news-modal-close" type="button" data-news-modal-close aria-label="关闭新闻弹窗">×</button>
+          <div class="news-modal-header">
+            <time datetime="2026-03">2026.03</time>
+            <h3 id="nc-mxene-news-title">二维 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> MXene 单层纳米片剪切性能研究发表在 Nature Communications</h3>
+            <p>近日，课题组相关合作研究成果以“<em>Shear properties and stable wrinkle resistance in 2D Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> MXene monolayers</em>”为题发表在 Nature Communications。</p>
+          </div>
+          <div class="news-modal-body">
+            <p>
+              二维过渡金属碳化物 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> MXenes 兼具优异的力学性能和金属导电性，在航空航天、智能传感器、柔性电子以及微/纳机电系统等领域具有广阔应用前景。然而，在实际应用中，器件单元所承受的机械应力会显著影响其功能纳米结构的性能与可靠性。
+            </p>
+            <p>
+              该研究首次实现了 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> 单层纳米片的纳米尺度原位剪切测试，并结合分子动力学模拟和第一性原理计算，从实验与原子尺度共同揭示了二维材料在剪切载荷下的损伤起源和稳定抗皱机制。
+            </p>
+            <p>
+              研究发现，单层 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> 的面内剪切模量可达 278.8 ± 7.4 GPa；在持续剪切加载过程中，其有效剪切模量仍保持在 110.7 ± 9.7 GPa，并表现出约 18.6 ± 2.0 GPa 的剪切断裂强度和稳定抗皱能力。这一结果打破了人们对二维材料剪切失稳的传统认识，为柔性电子、结构复合薄膜和微纳器件的可靠性设计提供了新的力学依据。
+            </p>
+            <p>
+              论文由华东理工大学与合作单位共同完成。荣超、苏婷、余天昊为共同第一作者，闫亚宾、张博威、轩福贞为共同通讯作者。
+            </p>
+            <p class="news-reference">
+              原文链接：<a href="https://doi.org/10.1038/s41467-026-70573-2" target="_blank" rel="noreferrer">https://doi.org/10.1038/s41467-026-70573-2</a>
+            </p>
+          </div>
+          <div class="nc-detail-figure">
+            <img data-src="./assets/nc-mxene-detail.png?v=20260708" alt="Nature Communications论文详情与实验示意图" loading="lazy" decoding="async" />
+            <p>图示：论文页面、研究概述及单层 Ti<sub>3</sub>C<sub>2</sub>T<sub>x</sub> 纳米片面内剪切测试示意。</p>
           </div>
         </section>
       </div>
@@ -783,6 +873,6 @@
 
     <script src="./team-data.js?v=20260617blank"></script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script src="./script.js?v=20260625news"></script>
+    <script src="./script.js?v=20260708nc"></script>
   </body>
 </html>
