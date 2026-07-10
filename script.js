@@ -228,6 +228,16 @@ const languageText = {
     "The paper was completed by East China University of Science and Technology and collaborators. Chao Rong, Ting Su, and Tianhao Yu are co-first authors; Yabin Yan, Bowei Zhang, and Fu-Zhen Xuan are co-corresponding authors.",
   "原文链接：": "Original article: ",
   "论文首页：": "Article front page: ",
+  "课题组赴无锡开展春日团建活动": "Research Group Spring Outing in Wuxi",
+  "2024 年 4 月，课题组师生前往无锡，在惠山国家森林公园、惠山古镇与南长街度过了一段轻松愉快的春日时光。":
+    "In April 2024, the group traveled to Wuxi for a relaxed spring outing at Huishan National Forest Park, Huishan Ancient Town, and Nanchang Street.",
+  "大家在惠山国家森林公园沿途赏春、登高远眺，在山间留下集体合影；随后漫步惠山古镇，感受江南街巷的悠闲氛围。":
+    "The group enjoyed the spring scenery and a hill walk in Huishan National Forest Park, then explored Huishan Ancient Town and its relaxed Jiangnan streetscape.",
+  "当天的行程也延续至南长街。一路上的交流、笑声与合影，为紧张有序的科研生活增添了轻松的节奏，也让课题组的伙伴情谊更加紧密。":
+    "The outing continued at Nanchang Street. Conversations, laughter, and shared photos brought a lighter rhythm to research life and strengthened the group's camaraderie.",
+  "惠山国家森林公园合影": "Group photo at Huishan National Forest Park",
+  "南长街春日留影": "Spring photo at Nanchang Street",
+  "惠山国家森林公园留影": "Photo at Huishan National Forest Park",
   "图示：论文页面、研究概述及单层 Ti": "Figure: article page, research overview, and in-plane shear test schematic for monolayer Ti",
   " 纳米片面内剪切测试示意。": " nanosheets.",
   "图示：论文发表于 Acta Materialia, 316 (2026) 122458，研究围绕单晶 β-Sn 的应变率效应与应变梯度效应展开。":
@@ -471,6 +481,9 @@ const attributeTranslations = {
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue article page on microscale single-crystal copper fatigue"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing review article page on 2D material mechanics"],
       ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications article page on 2D material shear properties"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(1) img", "alt", "Group photo at Huishan National Forest Park"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(2) img", "alt", "Group photo at Nanchang Street"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(3) img", "alt", "Group photo at Huishan National Forest Park"],
     ],
   },
   zh: {
@@ -526,6 +539,9 @@ const attributeTranslations = {
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue 微尺度单晶铜疲劳研究论文首页"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing 二维材料力学综述论文首页"],
       ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications 二维材料剪切性能研究论文首页"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(1) img", "alt", "课题组在惠山国家森林公园合影"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(2) img", "alt", "课题组在南长街合影"],
+      ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(3) img", "alt", "课题组在惠山国家森林公园留影"],
     ],
   },
 };
