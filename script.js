@@ -139,9 +139,43 @@ const languageText = {
   "苏婷同学作博士学位论文答辩报告": "Su Ting presenting her doctoral dissertation defense",
   "苏婷同学与闫亚宾老师合影": "Su Ting with Prof. Yabin Yan",
   "答辩现场合影": "Group photo after the defense",
+  "万拾佳等在 Acta Materialia 发表单晶锡微尺度塑性研究":
+    "Wan Shijia et al. Published Microscale Plasticity Research on Single-Crystal Tin in Acta Materialia",
+  "万拾佳等合作完成的研究论文“":
+    "The research paper by Wan Shijia and collaborators, titled \"",
+  "该研究利用原位 SEM 微拉伸和微悬臂梁弯曲实验，系统考察了单晶 β-Sn 在不同应变速率及加载方式下的塑性变形与损伤行为。":
+    "Using in-situ SEM micro-tensile and micro-cantilever bending experiments, this study systematically examined plastic deformation and damage in single-crystal β-Sn under different strain rates and loading modes.",
+  "结果表明，应变率和加载模式共同影响位错滑移、蠕变损伤与应变梯度效应。该工作为微纳金属结构及电子互连材料的可靠性评估提供了实验参考。":
+    "The results show that strain rate and loading mode jointly affect dislocation slip, creep damage, and strain-gradient effects. This work provides experimental guidance for reliability assessment of micro/nano metal structures and electronic interconnect materials.",
   "单晶锡微尺度塑性研究发表在 Acta Materialia":
     "Microscale plasticity study of single-crystal tin published in Acta Materialia",
   "点击查看论文信息与研究亮点。": "View paper information and research highlights.",
+  "董亚辉、万拾佳等在 IJMS 发表 Ti₂AlNb 合金微力学研究":
+    "Dong Yahui, Wan Shijia et al. Published Ti₂AlNb Alloy Micromechanics Research in IJMS",
+  "董亚辉、万拾佳、王祎珩、苏婷等合作完成的研究论文“":
+    "The research paper by Dong Yahui, Wan Shijia, Wang Yiheng, Su Ting, and collaborators, titled \"",
+  "”发表在 ": "\", was published in ",
+  "Ti₂AlNb 合金中 B2 相与 O 相的协同变形直接影响材料的强塑性匹配。该研究采用原位 SEM 微柱压缩实验，系统考察了不同尺寸微柱中两相的变形行为及界面传递机制。":
+    "The cooperative deformation of B2 and O phases in Ti₂AlNb alloys directly affects the strength-ductility balance. This study used in-situ SEM micropillar compression to examine the deformation of both phases and the interfacial transfer mechanism in micropillars of different sizes.",
+  "结合晶体塑性有限元模拟，研究揭示了 B2/O 相界面附近的滑移传递、应力分配与尺寸效应，为理解 Ti₂AlNb 合金的多尺度塑性变形机制提供了新的实验依据。":
+    "Combined with crystal-plasticity finite-element simulations, the study reveals slip transfer, stress partitioning, and size effects near B2/O interfaces, providing new experimental evidence for multiscale plastic deformation mechanisms in Ti₂AlNb alloys.",
+  "王祎珩等在 IJF 发表微尺度单晶铜疲劳研究":
+    "Wang Yiheng et al. Published Microscale Single-Crystal Copper Fatigue Research in IJF",
+  "王祎珩、万拾佳等合作完成的研究论文“":
+    "The research paper by Wang Yiheng, Wan Shijia, and collaborators, titled \"",
+  "该研究通过原位 SEM 拉压疲劳实验，考察了不同应变幅与加载频率下微尺度单晶铜疲劳短裂纹的萌生和扩展行为。":
+    "This study used in-situ SEM tension-compression fatigue experiments to investigate the initiation and propagation of fatigue short cracks in microscale single-crystal copper under different strain amplitudes and loading frequencies.",
+  "研究比较了不同加载条件下短裂纹的演化路径与寿命特征，并从循环硬化与软化行为出发解释裂纹扩展速率的波动，为微纳金属结构的疲劳可靠性研究提供了参考。":
+    "The work compares short-crack evolution paths and lifetime characteristics under different loading conditions, and explains fluctuations in crack-growth rate through cyclic hardening and softening, providing a reference for fatigue reliability studies of micro/nano metal structures.",
+  "苏婷、荣超等在 IJEM 发表二维材料力学综述":
+    "Su Ting, Chao Rong et al. Published a 2D Materials Mechanics Review in IJEM",
+  "点击查看综述信息与研究内容。": "View review information and research content.",
+  "苏婷、荣超等合作完成的综述论文“":
+    "The review paper by Su Ting, Chao Rong, and collaborators, titled \"",
+  "该综述系统梳理了二维材料高质量力学性质测试的关键环节，重点讨论原位显微测试、样品转移、边缘缺陷和层间结合等因素对测量结果与器件可靠性的影响。":
+    "This review systematically outlines the key steps in high-quality mechanical-property testing of two-dimensional materials, focusing on how in-situ microscopy, sample transfer, edge defects, and interlayer bonding affect measurement results and device reliability.",
+  "文章进一步总结了二维材料的力学机制及其在柔性电子、精密传感和集成器件中的应用挑战，为选择适配的材料转移与力学测试策略提供了参考。":
+    "The article further summarizes the mechanical mechanisms of two-dimensional materials and their application challenges in flexible electronics, precision sensing, and integrated devices, providing guidance for selecting suitable transfer and mechanical-testing strategies.",
   "近日，课题组闫亚宾教授、22级硕博研究生万拾佳等合作完成的研究论文 “":
     "Recently, the paper completed by Prof. Yabin Yan, 2022 M.S.-Ph.D. track student Shijia Wan, and collaborators, titled \"",
   "” 发表在 Acta Materialia, 316 (2026) 122458。":
@@ -193,10 +227,20 @@ const languageText = {
   "论文由华东理工大学与合作单位共同完成。荣超、苏婷、余天昊为共同第一作者，闫亚宾、张博威、轩福贞为共同通讯作者。":
     "The paper was completed by East China University of Science and Technology and collaborators. Chao Rong, Ting Su, and Tianhao Yu are co-first authors; Yabin Yan, Bowei Zhang, and Fu-Zhen Xuan are co-corresponding authors.",
   "原文链接：": "Original article: ",
+  "论文首页：": "Article front page: ",
   "图示：论文页面、研究概述及单层 Ti": "Figure: article page, research overview, and in-plane shear test schematic for monolayer Ti",
   " 纳米片面内剪切测试示意。": " nanosheets.",
   "图示：论文发表于 Acta Materialia, 316 (2026) 122458，研究围绕单晶 β-Sn 的应变率效应与应变梯度效应展开。":
     "Figure: the paper was published in Acta Materialia, 316 (2026) 122458, and focuses on strain-rate effects and strain-gradient effects in single-crystal β-Sn.",
+  "荣超、苏婷等在 Nature Communications 发表二维材料剪切性能研究":
+    "Chao Rong, Su Ting et al. Published 2D Materials Shear Research in Nature Communications",
+  "荣超、苏婷、余天昊等合作完成的研究论文“":
+    "The research paper by Chao Rong, Su Ting, Tianhao Yu, and collaborators, titled \"",
+  "该研究实现了 Ti": "This study achieved nanoscale in-situ shear testing of Ti",
+  " 单层纳米片的纳米尺度原位剪切测试，并结合分子动力学模拟和第一性原理计算，揭示了二维材料在剪切载荷下的损伤起源与稳定抗皱机制。":
+    " monolayer nanosheets, and combined molecular-dynamics simulations with first-principles calculations to reveal damage origins and stable wrinkle resistance in two-dimensional materials under shear loading.",
+  "研究表明，该材料在持续剪切载荷下仍保持良好的刚度、断裂强度和抗皱能力，为柔性电子、结构复合薄膜及微纳器件的可靠性设计提供了新的力学依据。":
+    "The material maintains favorable stiffness, fracture strength, and wrinkle resistance under sustained shear loading, offering new mechanical guidance for the reliable design of flexible electronics, structural composite films, and micro/nano devices.",
   "相关工作发表在 Nature Communications，后续可补充新闻链接与论文图片。":
     "The related work was published in Nature Communications. News links and paper images can be added later.",
   "欢迎相关专业同学报考交流": "Prospective Students Are Welcome",
@@ -398,7 +442,7 @@ const attributeTranslations = {
       ["[data-hero-dot='1']", "aria-label", "Show photo 2"],
       ["[data-hero-dot='2']", "aria-label", "Show photo 3"],
       [".profile-photo img", "alt", "Photo of Prof. Yabin Yan"],
-      [".section-heading + .research-grid .research-card:nth-child(1) img", "alt", "Micro/nano porous material under scanning electron microscopy"],
+      [".section-heading + .research-grid .research-card:nth-child(1) img", "alt", "Metal interconnects in an integrated circuit under a microscope"],
       [".section-heading + .research-grid .research-card:nth-child(2) img", "alt", "Close-up of aero-engine blades"],
       [".section-heading + .research-grid .research-card:nth-child(3) img", "alt", "AI-driven autonomous materials discovery workflow"],
       [".section-heading + .research-grid .research-card:nth-child(4) img", "alt", "Electron microscope and in-situ experimental device"],
@@ -422,8 +466,11 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
-      [".paper-detail-figure img", "alt", "Acta Materialia article page on single-crystal tin plasticity"],
-      [".nc-detail-figure img", "alt", "Nature Communications article details and experimental schematic"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia article page on single-crystal tin plasticity"],
+      ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences article page on Ti₂AlNb alloy micromechanics"],
+      ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue article page on microscale single-crystal copper fatigue"],
+      ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing review article page on 2D material mechanics"],
+      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications article page on 2D material shear properties"],
     ],
   },
   zh: {
@@ -450,7 +497,7 @@ const attributeTranslations = {
       ["[data-hero-dot='1']", "aria-label", "显示第2张照片"],
       ["[data-hero-dot='2']", "aria-label", "显示第3张照片"],
       [".profile-photo img", "alt", "闫亚宾教授照片"],
-      [".section-heading + .research-grid .research-card:nth-child(1) img", "alt", "扫描电镜下的微纳多孔材料结构"],
+      [".section-heading + .research-grid .research-card:nth-child(1) img", "alt", "显微镜下的集成电路金属互连线"],
       [".section-heading + .research-grid .research-card:nth-child(2) img", "alt", "航空发动机叶片近景"],
       [".section-heading + .research-grid .research-card:nth-child(3) img", "alt", "AI驱动自动化材料发现流程"],
       [".section-heading + .research-grid .research-card:nth-child(4) img", "alt", "电子显微镜与原位实验装置"],
@@ -474,8 +521,11 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
-      [".paper-detail-figure img", "alt", "Acta Materialia 单晶锡塑性论文首页"],
-      [".nc-detail-figure img", "alt", "Nature Communications论文详情与实验示意图"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究论文首页"],
+      ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences Ti₂AlNb 合金微力学研究论文首页"],
+      ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue 微尺度单晶铜疲劳研究论文首页"],
+      ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing 二维材料力学综述论文首页"],
+      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications 二维材料剪切性能研究论文首页"],
     ],
   },
 };
