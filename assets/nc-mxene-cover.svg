@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="690" height="786" viewBox="0 0 690 786" role="img" aria-labelledby="title desc">
+  <title id="title">Nature Communications paper cover</title>
+  <desc id="desc">Cover for the article Shear properties and stable wrinkle resistance in 2D Ti3C2Tx MXene monolayers</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071e2b"/>
+      <stop offset="0.56" stop-color="#0f4651"/>
+      <stop offset="1" stop-color="#2b7d76"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="65%" cy="30%" r="58%">
+      <stop offset="0" stop-color="#82e1cf" stop-opacity=".36"/>
+      <stop offset="1" stop-color="#82e1cf" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <pattern id="grid" width="58" height="50" patternUnits="userSpaceOnUse">
+      <path d="M29 2 55 17v30L29 62 3 47V17Z" fill="none" stroke="#b6f3e8" stroke-opacity=".18" stroke-width="1.4"/>
+      <circle cx="29" cy="2" r="4" fill="#f5b55f" fill-opacity=".86"/>
+      <circle cx="3" cy="17" r="3" fill="#81d9d4" fill-opacity=".92"/>
+      <circle cx="55" cy="17" r="3" fill="#81d9d4" fill-opacity=".92"/>
+    </pattern>
+  </defs>
+
+  <rect width="690" height="786" fill="url(#bg)"/>
+  <rect width="690" height="786" fill="url(#glow)"/>
+  <path d="M-40 596C105 510 245 603 376 532s246-62 374-139v393H-40Z" fill="#061a26" fill-opacity=".72"/>
+  <path d="M-28 620C122 530 258 632 390 557s239-62 333-126" fill="none" stroke="#75d4c8" stroke-opacity=".42" stroke-width="2"/>
+
+  <g transform="translate(382 314) rotate(-8)">
+    <rect x="-175" y="-70" width="350" height="250" rx="22" fill="#102d39" opacity=".55" filter="url(#shadow)"/>
+    <rect x="-175" y="-70" width="350" height="250" rx="22" fill="url(#grid)" stroke="#b9f5ea" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M-170 68C-105 15-48 131 18 75S112 17 170 62" fill="none" stroke="#ffd27f" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-170 80C-105 27-48 143 18 87S112 29 170 74" fill="none" stroke="#ffffff" stroke-opacity=".38" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#dffbf5" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">
+      <text x="-146" y="-34">IN-PLANE SHEAR</text>
+      <text x="65" y="150">Ti₃C₂Tₓ</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#fff">
+    <text x="42" y="53" font-size="16" font-weight="700" letter-spacing="2.4">NATURE COMMUNICATIONS</text>
+    <line x1="42" y1="69" x2="648" y2="69" stroke="#a4e4da" stroke-opacity=".65"/>
+    <text x="42" y="96" font-size="13" fill="#d8f4ef">ARTICLE · 2026 · 17:2411</text>
+
+    <text x="42" y="522" font-size="34" font-weight="700">
+      <tspan x="42" dy="0">Shear properties and stable</tspan>
+      <tspan x="42" dy="42">wrinkle resistance in 2D</tspan>
+      <tspan x="42" dy="42">Ti₃C₂Tₓ MXene monolayers</tspan>
+    </text>
+
+    <text x="42" y="665" font-size="16" font-weight="600" fill="#e6fbf7">
+      <tspan>Chao Rong · Ting Su · Tianhao Yu · Xiaoyuan Wang ·</tspan>
+      <tspan x="42" dy="25">Tianshu Chu · Mingliang Zhu · Yabin Yan · Bowei Zhang · Fu-Zhen Xuan</tspan>
+    </text>
+    <text x="42" y="736" font-size="13" fill="#caeee7">Direct in-situ shear testing of monolayer MXene using a Push-to-Shear strategy</text>
+    <text x="42" y="764" font-size="12" fill="#a8dcd3">https://doi.org/10.1038/s41467-026-70573-2</text>
+  </g>
+</svg>

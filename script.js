@@ -129,7 +129,6 @@ const languageText = {
   "2021及以前": "2021 and Earlier",
   "恭喜苏婷同学顺利通过博士学位论文答辩！":
     "Congratulations to Su Ting on Successfully Passing Her Doctoral Dissertation Defense!",
-  "点击查看答辩现场照片与祝福。": "View defense photos and congratulations.",
   "热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。":
     "Warm congratulations to Su Ting on successfully completing her doctoral dissertation defense and bringing her doctoral journey to a wonderful conclusion.",
   "答辩过程中，苏婷同学围绕二维材料力学性能与可靠性相关研究进行了系统汇报，充分展示了扎实的科研积累、严谨的学术态度和持续探索的研究精神。":
@@ -139,65 +138,62 @@ const languageText = {
   "苏婷同学作博士学位论文答辩报告": "Su Ting presenting her doctoral dissertation defense",
   "苏婷同学与闫亚宾老师合影": "Su Ting with Prof. Yabin Yan",
   "答辩现场合影": "Group photo after the defense",
-  "万拾佳等在 Acta Materialia 发表单晶锡微尺度塑性研究":
-    "Wan Shijia et al. Published Microscale Plasticity Research on Single-Crystal Tin in Acta Materialia",
+  "万拾佳等在 Acta Materialia 发表单晶 β-Sn 微尺度塑性研究":
+    "Wan Shijia et al. Report Microscale Plasticity of Single-Crystal β-Sn in Acta Materialia",
   "万拾佳等合作完成的研究论文“":
     "The research paper by Wan Shijia and collaborators, titled \"",
-  "该研究利用原位 SEM 微拉伸和微悬臂梁弯曲实验，系统考察了单晶 β-Sn 在不同应变速率及加载方式下的塑性变形与损伤行为。":
-    "Using in-situ SEM micro-tensile and micro-cantilever bending experiments, this study systematically examined plastic deformation and damage in single-crystal β-Sn under different strain rates and loading modes.",
-  "结果表明，应变率和加载模式共同影响位错滑移、蠕变损伤与应变梯度效应。该工作为微纳金属结构及电子互连材料的可靠性评估提供了实验参考。":
-    "The results show that strain rate and loading mode jointly affect dislocation slip, creep damage, and strain-gradient effects. This work provides experimental guidance for reliability assessment of micro/nano metal structures and electronic interconnect materials.",
-  "单晶锡微尺度塑性研究发表在 Acta Materialia":
-    "Microscale plasticity study of single-crystal tin published in Acta Materialia",
-  "点击查看论文信息与研究亮点。": "View paper information and research highlights.",
-  "董亚辉、万拾佳等在 IJMS 发表 Ti₂AlNb 合金微力学研究":
-    "Dong Yahui, Wan Shijia et al. Published Ti₂AlNb Alloy Micromechanics Research in IJMS",
+  "β-Sn 是电子互连中的典型低熔点、低对称性金属，其微尺度塑性同时受应变速率、加载方式和几何尺度影响。现有研究对位错滑移、蠕变损伤与应变梯度效应之间的耦合关系仍缺乏直接实验认识，限制了微纳互连结构的可靠性评价。":
+    "β-Sn is a low-melting-point, low-symmetry metal widely used in electronic interconnects. Its microscale plasticity is governed by strain rate, loading mode, and geometric scale. Direct experimental understanding of the coupling among dislocation slip, creep damage, and strain-gradient effects remains limited, constraining reliability assessment of micro- and nanoscale interconnect structures.",
+  "采用原位 SEM 微拉伸和微悬臂梁弯曲实验，对不同应变速率下单晶 β-Sn 的塑性变形进行对比研究，并结合表面滑移台阶、应变率敏感性和激活体积分析识别主导机制。":
+    "In-situ SEM micro-tensile and micro-cantilever bending experiments were used to compare the plastic deformation of single-crystal β-Sn across strain rates. Surface slip steps, strain-rate sensitivity, and activation volume were further analyzed to identify the governing mechanisms.",
+  "结果表明，高应变速率下变形主要由位错滑移控制，低应变速率下微拉伸试样出现明显蠕变损伤，而弯曲试样中的陡峭应力梯度会抑制损伤并诱发几何必要位错强化。该工作揭示了速率效应与变形梯度对单晶锡微尺度塑性的协同作用，为电子互连和微纳金属结构的寿命评价提供了实验依据。":
+    "The results show that dislocation slip dominates at high strain rates. At low strain rates, micro-tensile specimens exhibit pronounced creep damage, while steep stress gradients in bending suppress damage and induce strengthening through geometrically necessary dislocations. The work establishes how rate effects and deformation gradients jointly govern the microscale plasticity of single-crystal tin and provides experimental evidence for lifetime assessment of electronic interconnects and micro- or nanoscale metallic structures.",
+  "董亚辉、万拾佳等在 IJMS 发表 Ti₂AlNb 合金相间塑性研究":
+    "Dong Yahui, Wan Shijia et al. Report Interphase Plasticity in Ti₂AlNb Alloys in IJMS",
   "董亚辉、万拾佳、王祎珩、苏婷等合作完成的研究论文“":
     "The research paper by Dong Yahui, Wan Shijia, Wang Yiheng, Su Ting, and collaborators, titled \"",
   "”发表在 ": "\", was published in ",
-  "Ti₂AlNb 合金中 B2 相与 O 相的协同变形直接影响材料的强塑性匹配。该研究采用原位 SEM 微柱压缩实验，系统考察了不同尺寸微柱中两相的变形行为及界面传递机制。":
-    "The cooperative deformation of B2 and O phases in Ti₂AlNb alloys directly affects the strength-ductility balance. This study used in-situ SEM micropillar compression to examine the deformation of both phases and the interfacial transfer mechanism in micropillars of different sizes.",
-  "结合晶体塑性有限元模拟，研究揭示了 B2/O 相界面附近的滑移传递、应力分配与尺寸效应，为理解 Ti₂AlNb 合金的多尺度塑性变形机制提供了新的实验依据。":
-    "Combined with crystal-plasticity finite-element simulations, the study reveals slip transfer, stress partitioning, and size effects near B2/O interfaces, providing new experimental evidence for multiscale plastic deformation mechanisms in Ti₂AlNb alloys.",
-  "王祎珩等在 IJF 发表微尺度单晶铜疲劳研究":
-    "Wang Yiheng et al. Published Microscale Single-Crystal Copper Fatigue Research in IJF",
+  "Ti₂AlNb 合金兼具低密度、比强度、抗蠕变和抗氧化性能，是面向航空高温构件的轻质候选材料。其 B2 相具有较好的塑性，O 相具有较高强度，两相之间的应力分配与滑移传递决定了合金的强塑性匹配，但小尺度下相界作用与尺寸效应仍缺乏定量认识。":
+    "Ti₂AlNb alloys combine low density with high specific strength, creep resistance, and oxidation resistance, making them promising lightweight materials for high-temperature aerospace components. Their B2 phase provides ductility and their O phase provides strength. Stress partitioning and slip transfer between these phases control the strength-ductility balance, yet quantitative understanding of interphase effects and size dependence at small scales remains incomplete.",
+  "制备直径为 1、2 和 3 μm 的双相微柱，利用原位 SEM 微柱压缩实验观察塑性变形，并建立双相晶体塑性有限元模型，分析不同 O 相分布和微柱尺寸下的相间力学耦合。":
+    "Dual-phase micropillars with diameters of 1, 2, and 3 μm were fabricated. Plastic deformation was observed through in-situ SEM micropillar compression, and a dual-phase crystal plasticity finite-element model was developed to analyze mechanical coupling across O-phase distributions and pillar sizes.",
+  "结果显示，微柱直径增大时屈服强度由 537.2 MPa 降至 278.5 MPa，塑性机制随尺寸发生转变。O 相取向、局部晶粒尺寸及两相滑移系的几何匹配共同控制应力集中和跨相滑移传递，B2/O 相间应力差随微柱尺寸增大而减弱。该研究为 Ti₂AlNb 合金的微结构调控与跨尺度力学建模提供了实验和计算依据。":
+    "The yield strength decreases from 537.2 MPa to 278.5 MPa as pillar diameter increases, accompanied by a size-dependent transition in plasticity. O-phase orientation, local grain size, and geometric alignment of slip systems jointly control stress concentration and interphase slip transfer. The stress difference between B2 and O phases also decreases with increasing pillar size. These findings provide experimental and computational evidence for microstructure control and multiscale mechanical modeling of Ti₂AlNb alloys.",
+  "王祎珩、万拾佳等在 IJF 发表微尺度单晶铜短裂纹研究":
+    "Wang Yiheng, Wan Shijia et al. Report Fatigue Short Cracks in Microscale Single-Crystal Copper in IJF",
   "王祎珩、万拾佳等合作完成的研究论文“":
     "The research paper by Wang Yiheng, Wan Shijia, and collaborators, titled \"",
-  "该研究通过原位 SEM 拉压疲劳实验，考察了不同应变幅与加载频率下微尺度单晶铜疲劳短裂纹的萌生和扩展行为。":
-    "This study used in-situ SEM tension-compression fatigue experiments to investigate the initiation and propagation of fatigue short cracks in microscale single-crystal copper under different strain amplitudes and loading frequencies.",
-  "研究比较了不同加载条件下短裂纹的演化路径与寿命特征，并从循环硬化与软化行为出发解释裂纹扩展速率的波动，为微纳金属结构的疲劳可靠性研究提供了参考。":
-    "The work compares short-crack evolution paths and lifetime characteristics under different loading conditions, and explains fluctuations in crack-growth rate through cyclic hardening and softening, providing a reference for fatigue reliability studies of micro/nano metal structures.",
-  "苏婷、荣超等在 IJEM 发表二维材料力学综述":
-    "Su Ting, Chao Rong et al. Published a 2D Materials Mechanics Review in IJEM",
-  "点击查看综述信息与研究内容。": "View review information and research content.",
+  "疲劳短裂纹的萌生与早期扩展占据微纳金属构件寿命的重要部分，但受试样制备和原位加载能力限制，现有实验认识主要来自宏观材料。微尺度短裂纹如何响应应变幅和加载频率，仍是微纳器件寿命预测中的关键问题。":
+    "The initiation and early propagation of fatigue short cracks occupy a substantial portion of the lifetime of micro- and nanoscale metallic components. Experimental knowledge is still dominated by macroscale materials because specimen fabrication and in-situ loading remain difficult. The response of microscale short cracks to strain amplitude and loading frequency is therefore a central issue in lifetime prediction for micro- and nanoscale devices.",
+  "对微尺度单晶铜开展应变控制原位 SEM 拉压疲劳实验，比较不同应变幅和加载频率下表面裂纹与内部裂纹的萌生、扩展和寿命分配，并利用分解剪应力的循环硬化与软化解释裂纹速率变化。":
+    "Strain-controlled in-situ SEM tension-compression fatigue experiments were performed on microscale single-crystal copper. The initiation, propagation, and lifetime partitioning of surface and internal cracks were compared across strain amplitudes and loading frequencies, and variations in crack growth rate were related to cyclic hardening and softening of the resolved shear stress.",
+  "结果表明，短裂纹扩展速率在萌生阶段附近达到较高水平，随后内部裂纹相对表面裂纹表现出传播滞后，且该行为受到应变幅和加载频率共同影响。裂纹萌生寿命与扩展寿命均符合 Manson-Coffin 关系，但对加载频率具有不同敏感性。该研究为微尺度金属疲劳损伤的分阶段表征和寿命模型构建提供了直接证据。":
+    "The short-crack growth rate is high near initiation, followed by delayed propagation of internal cracks relative to surface cracks. This behavior is jointly controlled by strain amplitude and loading frequency. Both initiation life and propagation life follow Manson-Coffin relations, although their sensitivities to loading frequency differ. The study provides direct evidence for stage-resolved characterization and lifetime modeling of fatigue damage in microscale metals.",
+  "苏婷、荣超等在 IJEM 发表二维材料力学测试与机制综述":
+    "Su Ting, Chao Rong et al. Publish a Review of Mechanical Testing and Mechanisms of Two-Dimensional Materials in IJEM",
   "苏婷、荣超等合作完成的综述论文“":
-    "The review paper by Su Ting, Chao Rong, and collaborators, titled \"",
-  "该综述系统梳理了二维材料高质量力学性质测试的关键环节，重点讨论原位显微测试、样品转移、边缘缺陷和层间结合等因素对测量结果与器件可靠性的影响。":
-    "This review systematically outlines the key steps in high-quality mechanical-property testing of two-dimensional materials, focusing on how in-situ microscopy, sample transfer, edge defects, and interlayer bonding affect measurement results and device reliability.",
-  "文章进一步总结了二维材料的力学机制及其在柔性电子、精密传感和集成器件中的应用挑战，为选择适配的材料转移与力学测试策略提供了参考。":
-    "The article further summarizes the mechanical mechanisms of two-dimensional materials and their application challenges in flexible electronics, precision sensing, and integrated devices, providing guidance for selecting suitable transfer and mechanical-testing strategies.",
-  "近日，课题组闫亚宾教授、22级硕博研究生万拾佳等合作完成的研究论文 “":
-    "Recently, the paper completed by Prof. Yabin Yan, 2022 M.S.-Ph.D. track student Shijia Wan, and collaborators, titled \"",
-  "” 发表在 Acta Materialia, 316 (2026) 122458。":
-    "\", was published in Acta Materialia, 316 (2026) 122458.",
-  "β-Sn 是典型的低熔点、低对称性金属，其微尺度塑性变形机制与应变率、加载方式和几何尺度密切相关，对电子封装、微纳结构和低熔点金属服役可靠性具有重要意义。然而，此类材料在微尺度下的位错运动、蠕变损伤与应变梯度效应之间的耦合关系仍有待深入理解。":
-    "β-Sn is a typical low-melting-point, low-symmetry metal. Its microscale plastic deformation is closely related to strain rate, loading mode, and geometry, and is important for the reliability of electronic packaging, micro/nano structures, and low-melting-point metals in service. However, the coupled relation among dislocation motion, creep damage, and strain-gradient effects in this class of materials remains to be understood.",
-  "该研究通过原位 SEM 微拉伸实验和微悬臂梁弯曲实验，系统考察了单晶 β-Sn 在不同应变速率下的塑性行为与应变梯度效应。结果表明，两种加载方式下均激活了 (101)-[101] 滑移系，但具体变形机制同时受到应变率和加载模式影响。":
-    "Using in-situ SEM micro-tensile tests and micro-cantilever bending experiments, the study systematically examined the plastic behavior and strain-gradient effects of single-crystal β-Sn under different strain rates. The results show that the (101)-[101] slip system is activated in both loading modes, while the deformation mechanism is affected by both strain rate and loading mode.",
-  "在较高应变率下，材料变形主要由位错滑移主导；在较低应变率下，微拉伸试样表现出明显的蠕变损伤，而微弯曲试样中的损伤受到抑制，这与陡峭应力梯度和表面效应有关。研究还发现，弯曲条件下的显著强化来源于几何必要位错的累积。":
-    "At higher strain rates, deformation is mainly governed by dislocation slip. At lower strain rates, micro-tensile specimens show pronounced creep damage, while such damage is suppressed in micro-bending specimens because of the steep stress gradient and surface effects. The study also shows that the significant strengthening under bending originates from the accumulation of geometrically necessary dislocations.",
-  "通过对表面滑移台阶的定量分析，研究揭示了位错塞积引起的背应力与台阶高度平方根之间的标度关系；应变率敏感性指数 m = 0.043-0.046 以及激活体积分析进一步表明，单晶 β-Sn 的变形机制会从低速率下的扩散辅助攀移动态转变为高速率下的热激活滑移。":
-    "Quantitative analysis of surface slip steps reveals a scaling relation between the back stress caused by dislocation pile-ups and the square root of step height. The strain-rate sensitivity m = 0.043-0.046 and activation-volume analysis further indicate a dynamic transition from diffusion-assisted climb at low rates to thermally activated slip at high rates in single-crystal β-Sn.",
-  "该工作为理解低熔点金属在微尺度下的扩散控制损伤、梯度诱导强化和加载方式相关应力分布提供了新的实验依据，也为微纳金属结构和电子互连材料的可靠性评估提供了重要参考。":
-    "This work provides new experimental evidence for understanding diffusion-controlled damage, gradient-induced hardening, and loading-dependent stress distributions in low-melting-point metals at the microscale. It also offers useful guidance for reliability assessment of micro/nanoscale metal structures and electronic interconnect materials.",
+    "The review by Su Ting, Chao Rong, and collaborators, titled \"",
+  "二维材料的原子级厚度使其力学测试高度依赖样品质量、转移过程和原位表征条件。污染、残余应力、边缘缺陷及测试平台差异都可能造成测量偏差，现有研究中材料转移与实验方案之间仍缺少系统匹配原则。":
+    "The atomic-scale thickness of two-dimensional materials makes mechanical testing highly sensitive to sample quality, transfer processes, and in-situ characterization conditions. Contamination, residual stress, edge defects, and differences among testing platforms can all bias measurements. Systematic principles for matching material transfer with experimental design remain underdeveloped.",
+  "系统梳理二维材料的湿法、干法和确定性转移技术，以及基于 AFM、SEM 和 TEM 的原位力学测试方法，比较不同技术的适用条件与误差来源，并总结断裂行为、几何尺寸效应、边缘缺陷和层间结合机制。":
+    "Wet, dry, and deterministic transfer methods for two-dimensional materials were systematically reviewed together with in-situ mechanical testing based on AFM, SEM, and TEM. The operating conditions and error sources of these techniques were compared, and current understanding of fracture behavior, geometric size effects, edge defects, and interlayer bonding was synthesized.",
+  "该综述建立了从材料特性、转移质量到测试策略的完整分析框架，为研究人员选择适配的样品制备和力学表征方案提供指导，也为连接二维材料微观结构、力学响应与器件可靠性提供了系统认识。":
+    "The review establishes an integrated framework linking material characteristics, transfer quality, and testing strategy. It guides the selection of compatible sample preparation and mechanical characterization methods and provides a systematic basis for connecting microstructure, mechanical response, and device reliability in two-dimensional materials.",
+  "苏婷、荣超和余天昊等在 Nature Communications 发表二维 MXene 剪切性能研究":
+    "Su Ting, Chao Rong, Tianhao Yu et al. Report the Shear Properties of Two-Dimensional MXene in Nature Communications",
+  "苏婷、荣超和余天昊等合作完成的研究论文“":
+    "The research paper by Su Ting, Chao Rong, Tianhao Yu, and collaborators, titled \"",
+  "二维 Ti₃C₂Tₓ MXene 兼具优异力学性能、金属导电性和溶液加工能力，在航空航天、智能传感、柔性电子及微纳机电系统中具有应用潜力。已有研究主要关注其单轴拉伸行为，受微纳测试方法限制，单层材料在面内剪切载荷下的本征力学性能和起皱稳定性长期缺少直接测量。":
+    "Two-dimensional Ti₃C₂Tₓ MXene combines exceptional mechanical properties, metallic conductivity, and solution processability, supporting potential applications in aerospace systems, intelligent sensors, flexible electronics, and micro- or nanoelectromechanical systems. Previous work has focused primarily on uniaxial tension. Limitations in micro- and nanomechanical testing have left the intrinsic in-plane shear properties and wrinkle stability of monolayers without direct measurement.",
+  "提出 Push-to-Shear 原位测试策略，构建定向剪切器件，在 SEM 中实现单层 Ti₃C₂Tₓ 纳米片的直接面内剪切加载，并结合分子动力学模拟、第一性原理计算和电子显微表征分析变形与损伤机制。":
+    "An in-situ Push-to-Shear strategy and a directional shear device were developed for direct in-plane loading of monolayer Ti₃C₂Tₓ nanosheets inside an SEM. Molecular dynamics simulations, first-principles calculations, and electron microscopy were combined to analyze deformation and damage mechanisms.",
+  "结果表明，单晶单层 Ti₃C₂Tₓ 的面内剪切模量达到 0.279 ± 0.007 TPa，剪切强度约为 18.6 GPa，平均剪切应变约为 8.6%，同时保持稳定的抗皱能力。研究进一步揭示了局部非均匀变形累积与原子层间强键合作用对剪切损伤和面外稳定性的影响，为二维柔性电子与微纳器件的结构设计和可靠性评价提供了直接实验依据。":
+    "Single-crystal monolayer Ti₃C₂Tₓ exhibits an in-plane shear modulus of 0.279 ± 0.007 TPa, a shear strength of approximately 18.6 GPa, and an average shear strain of approximately 8.6%, while maintaining stable wrinkle resistance. The study further identifies the roles of localized nonuniform deformation and strong bonding between atomic layers in shear damage and out-of-plane stability. These results provide direct experimental evidence for structural design and reliability assessment of two-dimensional flexible electronics and micro- or nanoscale devices.",
   "恭喜23级五位硕士毕业生顺利毕业": "Congratulations to the Five 2023 Master's Graduates",
-  "点击查看毕业合影与祝福。": "View graduation photos and congratulations.",
   "恭喜王祎珩、吴昊、董亚辉、徐渝京、史春浩顺利毕业，预祝苏婷顺利毕业！":
     "Congratulations to Wang Yiheng, Wu Hao, Dong Yahui, Xu Yujing, and Shi Chunhao on their graduation. Best wishes to Su Ting for a successful graduation ahead.",
-  "苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026": "Su Ting and Wan Shijia attended ESIA18-ISSI2026 in Glasgow, UK",
   "苏婷、万拾佳赴英国格拉斯哥参加第18届工程结构完整性评估国际会议":
     "Su Ting and Wan Shijia Attended the 18th International Conference on Engineering Structural Integrity Assessment",
-  "点击查看会议现场照片与参会报道。": "View conference photos and the participation report.",
   "2026年5月16日至22日，苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026，并在分会场作学术报告。":
     "From May 16 to 22, 2026, Su Ting and Wan Shijia attended ESIA18-ISSI2026 in Glasgow, UK, and delivered session presentations.",
   "本次会议全称为第18届工程结构完整性评估国际会议暨2026结构完整性国际研讨会，即 18th International Conference on Engineering Structural Integrity Assessment in conjunction with the 2026 International Symposium on Structural Integrity（ESIA18-ISSI2026）。会议在英国斯特拉斯克莱德大学 Technology and Innovation Centre 举行，由英国工程结构完整性论坛（FESI）与中国结构完整性联盟（CSIC）联合组织。":
@@ -211,21 +207,6 @@ const languageText = {
   "万拾佳作分会场报告": "Wan Shijia presenting in a technical session",
   "会议交流活动现场": "Conference exchange event",
   "大会报告现场": "Plenary session",
-  "课题组网站上线试运行": "Research Group Website Soft Launch",
-  "网站内容持续整理中，欢迎补充团队照片、组会动态、论文封面和招生通知。":
-    "Website content is still being organized. Team photos, meeting updates, paper covers, and admission notices are welcome.",
-  "二维薄膜剪切失稳相关研究发表": "Study on Shear Instability of 2D Films Published",
-  "二维 Ti": "2D Ti",
-  " MXene 单层纳米片剪切性能研究发表在 Nature Communications":
-    " MXene Monolayer Shear Study Published in Nature Communications",
-  "点击查看论文详情与研究亮点。": "View paper details and research highlights.",
-  "近日，课题组相关合作研究成果以“": "Recently, collaborative research from the group, titled \"",
-  "”为题发表在 Nature Communications。": "\", was published in Nature Communications.",
-  "该研究首次实现了 Ti": "This study achieved the first nanoscale in-situ shear test of Ti",
-  " 单层纳米片的纳米尺度原位剪切测试，并结合分子动力学模拟和第一性原理计算，从实验与原子尺度共同揭示了二维材料在剪切载荷下的损伤起源和稳定抗皱机制。":
-    " monolayer nanosheets, combining molecular dynamics simulations and first-principles calculations to reveal the damage origin and stable wrinkle-resistance mechanism of 2D materials under shear loading.",
-  "论文由华东理工大学与合作单位共同完成。荣超、苏婷、余天昊为共同第一作者，闫亚宾、张博威、轩福贞为共同通讯作者。":
-    "The paper was completed by East China University of Science and Technology and collaborators. Chao Rong, Ting Su, and Tianhao Yu are co-first authors; Yabin Yan, Bowei Zhang, and Fu-Zhen Xuan are co-corresponding authors.",
   "原文链接：": "Original article: ",
   "论文首页：": "Article front page: ",
   "课题组赴无锡开展春日团建活动": "Research Group Spring Outing in Wuxi",
@@ -238,21 +219,6 @@ const languageText = {
   "惠山国家森林公园合影": "Group photo at Huishan National Forest Park",
   "南长街春日留影": "Spring photo at Nanchang Street",
   "惠山国家森林公园留影": "Photo at Huishan National Forest Park",
-  "图示：论文页面、研究概述及单层 Ti": "Figure: article page, research overview, and in-plane shear test schematic for monolayer Ti",
-  " 纳米片面内剪切测试示意。": " nanosheets.",
-  "图示：论文发表于 Acta Materialia, 316 (2026) 122458，研究围绕单晶 β-Sn 的应变率效应与应变梯度效应展开。":
-    "Figure: the paper was published in Acta Materialia, 316 (2026) 122458, and focuses on strain-rate effects and strain-gradient effects in single-crystal β-Sn.",
-  "荣超、苏婷等在 Nature Communications 发表二维材料剪切性能研究":
-    "Chao Rong, Su Ting et al. Published 2D Materials Shear Research in Nature Communications",
-  "荣超、苏婷、余天昊等合作完成的研究论文“":
-    "The research paper by Chao Rong, Su Ting, Tianhao Yu, and collaborators, titled \"",
-  "该研究实现了 Ti": "This study achieved nanoscale in-situ shear testing of Ti",
-  " 单层纳米片的纳米尺度原位剪切测试，并结合分子动力学模拟和第一性原理计算，揭示了二维材料在剪切载荷下的损伤起源与稳定抗皱机制。":
-    " monolayer nanosheets, and combined molecular-dynamics simulations with first-principles calculations to reveal damage origins and stable wrinkle resistance in two-dimensional materials under shear loading.",
-  "研究表明，该材料在持续剪切载荷下仍保持良好的刚度、断裂强度和抗皱能力，为柔性电子、结构复合薄膜及微纳器件的可靠性设计提供了新的力学依据。":
-    "The material maintains favorable stiffness, fracture strength, and wrinkle resistance under sustained shear loading, offering new mechanical guidance for the reliable design of flexible electronics, structural composite films, and micro/nano devices.",
-  "相关工作发表在 Nature Communications，后续可补充新闻链接与论文图片。":
-    "The related work was published in Nature Communications. News links and paper images can be added later.",
   "欢迎相关专业同学报考交流": "Prospective Students Are Welcome",
   "机械、能源动力、储能与新能源、力学、智能制造等方向同学可通过邮箱联系。":
     "Students in mechanical engineering, energy and power, energy storage and new energy, mechanics, intelligent manufacturing, and related fields are welcome to contact us by email.",
@@ -480,7 +446,7 @@ const attributeTranslations = {
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences article page on Ti₂AlNb alloy micromechanics"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue article page on microscale single-crystal copper fatigue"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing review article page on 2D material mechanics"],
-      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications article page on 2D material shear properties"],
+      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications cover for the shear properties of two-dimensional MXene"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(1) img", "alt", "Group photo at Huishan National Forest Park"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(2) img", "alt", "Group photo at Nanchang Street"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(3) img", "alt", "Group photo at Huishan National Forest Park"],
@@ -538,7 +504,7 @@ const attributeTranslations = {
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences Ti₂AlNb 合金微力学研究论文首页"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue 微尺度单晶铜疲劳研究论文首页"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing 二维材料力学综述论文首页"],
-      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications 二维材料剪切性能研究论文首页"],
+      ["#nc-mxene-news-modal .paper-detail-figure img", "alt", "Nature Communications 二维 MXene 剪切性能研究论文封面"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(1) img", "alt", "课题组在惠山国家森林公园合影"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(2) img", "alt", "课题组在南长街合影"],
       ["#wuxi-spring-outing-news-modal .outing-gallery figure:nth-child(3) img", "alt", "课题组在惠山国家森林公园留影"],
