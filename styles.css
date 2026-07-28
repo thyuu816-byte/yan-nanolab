@@ -867,7 +867,7 @@ a {
   border-radius: 6px;
 }
 
-.research-grid .research-card:first-child img {
+.research-microchip-image {
   filter: grayscale(1) contrast(0.82) brightness(0.88);
 }
 
