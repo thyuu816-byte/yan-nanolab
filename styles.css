@@ -2030,6 +2030,7 @@ a {
 
 @media (max-width: 1040px) {
   .header-inner {
+    position: relative;
     min-height: 68px;
   }
 
@@ -2038,6 +2039,7 @@ a {
   }
 
   .section-navigator {
+    position: absolute;
     left: auto;
     right: 18px;
     top: 76px;
