@@ -59,7 +59,7 @@ export async function onRequest({ request, env }) {
       .prepare(
         `INSERT INTO guestbook_messages
           (id, name, email, message, created_at, status)
-         VALUES (?, ?, ?, ?, ?, ?)`
+         VALUES (?, ?, ?, ?, ?, ?)`,
       )
       .bind(id, name, email || null, message, createdAt, "unread")
       .run();
@@ -72,7 +72,7 @@ export async function onRequest({ request, env }) {
 
     return jsonResponse(
       { error: storageMissing ? "MESSAGE_STORAGE_NOT_CONFIGURED" : "MESSAGE_SUBMISSION_FAILED" },
-      storageMissing ? 503 : 500
+      storageMissing ? 503 : 500,
     );
   }
 }

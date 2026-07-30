@@ -25,7 +25,7 @@
       photo: "./assets/team/yu-tianhao.jpg?v=20260612opt",
       level: "24级博士研究生",
       degree: "doctoral",
-      research: "功能凝胶材料构筑与多尺度多场耦合机制研究",
+      research: "高分子功能凝胶材料构筑与多尺度多场耦合机制研究",
       interests: "音乐、电子产品、电影",
       destination: "在读",
       contact: "Available by request",
@@ -111,7 +111,6 @@
     },
     {
       name: "周一峰",
-      photo: "./assets/team/zhou-yifeng.jpg?v=20260614",
       level: "25级硕士研究生",
       degree: "master",
       research: "结构疲劳与寿命预测",

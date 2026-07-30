@@ -18,14 +18,9 @@ const newsModalOpenButtons = Array.from(document.querySelectorAll("[data-news-mo
 const newsModalCloseButtons = Array.from(document.querySelectorAll("[data-news-modal-close]"));
 const publicationFilterButtons = Array.from(document.querySelectorAll("[data-paper-filter]"));
 const paperItems = Array.from(document.querySelectorAll(".paper-list li"));
-const easterEggButtons = Array.from(document.querySelectorAll("[data-easter-egg-step]"));
-const easterEggModal = document.querySelector("[data-easter-egg-modal]");
-const easterEggVideo = document.querySelector("[data-easter-egg-video]");
-const easterEggCloseButtons = Array.from(document.querySelectorAll("[data-easter-egg-close]"));
 let activeHeroSlide = 0;
 let heroTimer;
 let lastFocusedElement;
-let easterEggProgress = 0;
 let currentLanguage = "zh";
 let activeNewsModal;
 
@@ -38,6 +33,9 @@ const languageText = {
   "论文成果": "Publications",
   "新闻动态": "News",
   "留言板": "Guestbook",
+  "代表成果": "Research Highlights",
+  "实验能力": "Capabilities",
+  "加入我们": "Join Us",
   "展开章节导航": "Open section navigation",
   "收起章节导航": "Close section navigation",
   "页面导航": "Page Navigation",
@@ -52,6 +50,8 @@ const languageText = {
   "AI驱动功能材料": "AI-Driven Functional Materials",
   "电子显微原位实验": "In-Situ Electron Microscopy",
   "查看研究方向": "View Research",
+  "查看代表成果": "View Highlights",
+  "招生与合作": "Admissions & Collaboration",
   "看新闻动态": "Read News",
   "认识团队成员": "Meet the Team",
   "课题组新闻": "Group News",
@@ -59,6 +59,57 @@ const languageText = {
   "申请/授权发明专利": "Patent Applications / Grants",
   "软件著作权": "Software Copyrights",
   "英文专著章节": "Book Chapters",
+  "从论文标题进一步走向科学问题、实验方法与关键发现，让同行、学生与合作伙伴更快理解课题组正在解决什么。":
+    "Go beyond paper titles to the scientific questions, methods, and key findings, so researchers, students, and partners can quickly understand the problems we address.",
+  "二维材料力学": "2D Materials Mechanics",
+  "直接测量单层 MXene 的面内剪切性能": "Directly measuring the in-plane shear properties of monolayer MXene",
+  "结合原位微纳力学实验与理论分析，揭示二维材料的剪切响应和稳定抗皱机制。":
+    "Combining in-situ micro/nano mechanical experiments and theory to reveal shear response and stable wrinkle resistance in 2D materials.",
+  "微尺度塑性": "Microscale Plasticity",
+  "揭示单晶锡中的应变率与变形梯度效应": "Revealing strain-rate and deformation-gradient effects in single-crystal tin",
+  "通过微力学实验量化小尺度塑性行为，为电子封装材料的可靠性评价提供依据。":
+    "Quantifying small-scale plasticity through micromechanical experiments to support reliability assessment of electronic packaging materials.",
+  "高温合金": "High-Temperature Alloys",
+  "揭示 Ti₂AlNb 两相之间的微力学相互作用": "Revealing micromechanical interactions between phases in Ti₂AlNb",
+  "量化尺寸、取向和相界对塑性传递的影响，支撑轻质高温合金的跨尺度设计。":
+    "Quantifying how size, orientation, and phase boundaries affect plastic transfer to support multiscale design of lightweight high-temperature alloys.",
+  "阅读论文": "Read Paper",
+  "查看全部代表性论文": "View All Selected Publications",
+  "实验能力与研究方法": "Experimental Capabilities & Methods",
+  "从实验装置开发、微纳尺度原位观测到跨尺度模拟与数据驱动设计，形成面向失效机理和工程可靠性的完整研究链条。":
+    "From experimental-device development and in-situ micro/nano observation to multiscale modeling and data-driven design, we build an integrated workflow for failure mechanisms and engineering reliability.",
+  "在电子显微环境中观察材料变形与失效": "Observing material deformation and failure inside electron microscopes",
+  "原位电子显微实验": "In-Situ Electron Microscopy",
+  "在微纳尺度实时表征材料的变形、裂纹萌生、疲劳与界面失效过程。":
+    "Real-time characterization of deformation, crack initiation, fatigue, and interfacial failure at micro and nano scales.",
+  "微型实验装置开发": "Miniaturized Experimental Devices",
+  "面向显微环境开发加载、激振、环境控制和多场耦合实验装置。":
+    "Developing loading, excitation, environmental-control, and multiphysics devices for microscopy environments.",
+  "跨尺度模拟与寿命预测": "Multiscale Modeling & Life Prediction",
+  "连接微观失效机制与宏观工程响应，服务复杂装备的可靠性评价。":
+    "Connecting microscopic failure mechanisms with macroscopic engineering responses for reliability assessment of complex equipment.",
+  "数据驱动材料设计": "Data-Driven Materials Design",
+  "利用机器学习与优化算法加速功能材料筛选、性能预测与参数设计。":
+    "Using machine learning and optimization to accelerate functional-material screening, property prediction, and parameter design.",
+  "面向科研合作与企业联合技术攻关": "Academic Collaboration & Joint Industry R&D",
+  "覆盖电子产品可靠性、航空航天与能源装备、微纳器件及先进功能材料。":
+    "Covering electronics reliability, aerospace and energy equipment, micro/nano devices, and advanced functional materials.",
+  "联系合作": "Discuss Collaboration",
+  "欢迎对材料与结构可靠性、微纳尺度实验、先进装备和功能材料感兴趣的同学与合作伙伴联系我们。":
+    "We welcome students and partners interested in material and structural reliability, micro/nano experiments, advanced equipment, and functional materials.",
+  "研究生申请咨询": "Graduate Application Enquiries",
+  "动力工程与工程热物理、机械工程、能源动力、力学及相关专业背景。":
+    "Applicants from power engineering, engineering thermophysics, mechanical engineering, energy and power, mechanics, and related fields are welcome.",
+  "交叉研究方向": "Interdisciplinary Research",
+  "欢迎具备材料、力学、微纳实验、计算模拟、人工智能等背景的同学交流。":
+    "We welcome students with backgrounds in materials, mechanics, micro/nano experiments, computational modeling, and artificial intelligence.",
+  "学术与产业合作": "Academic & Industry Collaboration",
+  "围绕失效分析、寿命预测、实验装置和材料设计开展联合研究与技术攻关。":
+    "Joint research and technology development in failure analysis, life prediction, experimental devices, and materials design.",
+  "具体招生名额与年度政策以学校最新通知及邮件沟通为准。":
+    "Available positions and annual admissions policies are subject to the latest university announcements and email confirmation.",
+  "发送邮件": "Send Email",
+  "查看教师主页": "View Faculty Profile",
   "闫亚宾 教授 · 博士生导师": "Prof. Yabin Yan · Doctoral Supervisor",
   "闫亚宾教授主要从事宏微观机械装备损伤失效评价、新型功能材料设计与应用、基于电子显微技术的微纳尺度仪器装置开发等方面的研究。":
     "Prof. Yabin Yan focuses on damage and failure assessment of mechanical equipment across scales, design and application of functional materials, and micro/nano-scale instruments based on electron microscopy.",
@@ -109,6 +160,9 @@ const languageText = {
     "We develop miniature loading, environmental control, and electrochemical devices compatible with electron microscopes for real-time nanoscale observation and multiphysics testing.",
   "点击成员卡片查看研究方向、个人兴趣、毕业去向与联系方式。":
     "Click a member card to view research interests, hobbies, current status or career destination, and contact information.",
+  "教育与工作经历": "Education & Career",
+  "展开": "Expand",
+  "收起": "Collapse",
   "在读": "Current",
   "毕业啦": "Alumni",
   "返回成员列表": "Back to Members",
@@ -126,7 +180,7 @@ const languageText = {
   "论文成果与科研项目": "Publications and Research Projects",
   "2025-至今": "2025-Present",
   "ResearchGate 主页": "ResearchGate Profile",
-  "2021及以前": "2021 and Earlier",
+  "2016–2021": "2016–2021",
   "恭喜苏婷同学顺利通过博士学位论文答辩！":
     "Congratulations to Su Ting on Successfully Passing Her Doctoral Dissertation Defense!",
   "热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。":
@@ -407,7 +461,6 @@ const attributeTranslations = {
       [".section-nav-panel", "aria-label", "Section navigation"],
       [".hero", "aria-label", "Research group homepage hero"],
       [".hero-slider", "aria-label", "Research group photo carousel"],
-      [".hero-tags", "aria-label", "Research keywords"],
       [".hero-news-ticker", "aria-label", "Research group news ticker"],
       [".hero-controls", "aria-label", "Homepage photo controls"],
       [".hero-dots", "aria-label", "Select homepage photo"],
@@ -426,8 +479,6 @@ const attributeTranslations = {
       ["input[name='email']", "placeholder", "For receiving replies"],
       ["textarea[name='message']", "placeholder", "Write what you would like to discuss"],
       [".news-modal-close", "aria-label", "Close news dialog"],
-      [".easter-egg-panel", "aria-label", "Easter egg video"],
-      [".easter-egg-close", "aria-label", "Close easter egg video"],
       [".graduation-gallery", "aria-label", "Graduation photos"],
       [".graduation-gallery img:nth-child(1)", "alt", "The 2023 master's graduates with Prof. Yabin Yan"],
       [".graduation-gallery img:nth-child(2)", "alt", "Research group graduation photo in front of the Mao Zedong statue"],
@@ -442,7 +493,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
-      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia article page on single-crystal tin plasticity"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia cover for single-crystal tin plasticity"],
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences article page on Ti₂AlNb alloy micromechanics"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue article page on microscale single-crystal copper fatigue"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing review article page on 2D material mechanics"],
@@ -465,7 +516,6 @@ const attributeTranslations = {
       [".section-nav-panel", "aria-label", "章节导航"],
       [".hero", "aria-label", "课题组首页横幅"],
       [".hero-slider", "aria-label", "课题组照片轮播"],
-      [".hero-tags", "aria-label", "研究关键词"],
       [".hero-news-ticker", "aria-label", "课题组新闻滚动栏"],
       [".hero-controls", "aria-label", "首页照片控制"],
       [".hero-dots", "aria-label", "选择首页照片"],
@@ -484,8 +534,6 @@ const attributeTranslations = {
       ["input[name='email']", "placeholder", "用于接收回复"],
       ["textarea[name='message']", "placeholder", "写下您想交流的内容"],
       [".news-modal-close", "aria-label", "关闭新闻弹窗"],
-      [".easter-egg-panel", "aria-label", "彩蛋视频"],
-      [".easter-egg-close", "aria-label", "关闭彩蛋视频"],
       [".graduation-gallery", "aria-label", "毕业合影"],
       [".graduation-gallery img:nth-child(1)", "alt", "23级硕士毕业生与闫亚宾老师合影"],
       [".graduation-gallery img:nth-child(2)", "alt", "课题组毕业季毛主席像前合影"],
@@ -500,7 +548,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
-      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究论文首页"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究论文封面"],
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences Ti₂AlNb 合金微力学研究论文首页"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue 微尺度单晶铜疲劳研究论文首页"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing 二维材料力学综述论文首页"],
@@ -607,23 +655,57 @@ languageToggle?.addEventListener("click", (event) => {
 });
 
 const getOpenNewsModal = () => activeNewsModal || newsModals.find((modal) => !modal.hidden);
+const shouldReduceMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const openNewsModal = (modal) => {
+const openNewsModal = (modal, trigger) => {
   if (!modal) return;
   lastFocusedElement = document.activeElement;
   activeNewsModal = modal;
   loadDeferredMedia(modal);
+  modal.classList.remove("is-closing");
   modal.hidden = false;
   document.body.classList.add("is-modal-open");
+
+  const panel = modal.querySelector(".news-modal-panel");
+  const triggerRect = trigger?.getBoundingClientRect();
+  const panelRect = panel?.getBoundingClientRect();
+  if (triggerRect && panelRect) {
+    const originX = Math.max(0, Math.min(panelRect.width, triggerRect.left + triggerRect.width / 2 - panelRect.left));
+    const originY = Math.max(0, Math.min(panelRect.height, triggerRect.top + triggerRect.height / 2 - panelRect.top));
+    modal.style.setProperty("--news-origin-x", `${originX.toFixed(1)}px`);
+    modal.style.setProperty("--news-origin-y", `${originY.toFixed(1)}px`);
+  }
+
   modal.querySelector(".news-modal-close")?.focus();
 };
 
 const closeNewsModal = (modal = getOpenNewsModal()) => {
-  if (!modal || modal.hidden) return;
-  modal.hidden = true;
-  if (activeNewsModal === modal) activeNewsModal = undefined;
-  document.body.classList.remove("is-modal-open");
-  lastFocusedElement?.focus?.();
+  if (!modal || modal.hidden || modal.classList.contains("is-closing")) return;
+
+  const finishClose = () => {
+    if (modal.hidden) return;
+    modal.classList.remove("is-closing");
+    modal.hidden = true;
+    if (activeNewsModal === modal) activeNewsModal = undefined;
+    document.body.classList.remove("is-modal-open");
+    lastFocusedElement?.focus?.({ preventScroll: true });
+  };
+
+  if (shouldReduceMotion()) {
+    finishClose();
+    return;
+  }
+
+  modal.classList.add("is-closing");
+  const panel = modal.querySelector(".news-modal-panel");
+  let isFinished = false;
+  const finishOnce = () => {
+    if (isFinished) return;
+    isFinished = true;
+    finishClose();
+  };
+  panel?.addEventListener("animationend", finishOnce, { once: true });
+  window.setTimeout(finishOnce, 230);
 };
 
 newsModalOpenButtons.forEach((button) => {
@@ -631,7 +713,7 @@ newsModalOpenButtons.forEach((button) => {
     const modal = button.dataset.newsModalOpen
       ? document.querySelector(button.dataset.newsModalOpen)
       : newsModals[0];
-    openNewsModal(modal);
+    openNewsModal(modal, button);
   });
 });
 
@@ -658,42 +740,6 @@ publicationFilterButtons.forEach((button) => {
 });
 
 setPublicationFilter("2026");
-
-const openEasterEggModal = () => {
-  if (!easterEggModal) return;
-  lastFocusedElement = document.activeElement;
-  loadDeferredMedia(easterEggModal);
-  easterEggModal.hidden = false;
-  document.body.classList.add("is-modal-open");
-  if (easterEggVideo) {
-    easterEggVideo.currentTime = 0;
-    easterEggVideo.play?.().catch(() => {});
-  }
-  easterEggModal.querySelector(".easter-egg-close")?.focus();
-};
-
-const closeEasterEggModal = () => {
-  if (!easterEggModal || easterEggModal.hidden) return;
-  if (easterEggVideo) {
-    easterEggVideo.pause?.();
-    easterEggVideo.currentTime = 0;
-  }
-  easterEggModal.hidden = true;
-  document.body.classList.remove("is-modal-open");
-  lastFocusedElement?.focus?.();
-};
-
-easterEggButtons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    easterEggProgress = index === easterEggProgress ? easterEggProgress + 1 : index === 0 ? 1 : 0;
-    if (easterEggProgress === easterEggButtons.length) {
-      easterEggProgress = 0;
-      openEasterEggModal();
-    }
-  });
-});
-
-easterEggCloseButtons.forEach((button) => button.addEventListener("click", closeEasterEggModal));
 
 const closeSectionNavigator = () => {
   sectionNavigator?.classList.remove("is-open");
@@ -763,13 +809,33 @@ const createDetailItem = (label, value) => {
   return wrapper;
 };
 
-const resetTeamDetail = (panel) => {
+const resetTeamDetail = (panel, restoreFocus = false) => {
   const roster = panel?.querySelector("[data-team-list]");
   const detail = panel?.querySelector("[data-team-detail]");
   if (!roster || !detail) return;
-  roster.hidden = false;
-  detail.hidden = true;
-  panel.classList.remove("is-viewing-member");
+
+  const finishReset = () => {
+    detail.classList.remove("is-closing");
+    detail.hidden = true;
+    roster.hidden = false;
+    panel.classList.remove("is-viewing-member");
+    if (restoreFocus) lastFocusedElement?.focus?.({ preventScroll: true });
+  };
+
+  if (detail.hidden || shouldReduceMotion()) {
+    finishReset();
+    return;
+  }
+
+  detail.classList.add("is-closing");
+  let isFinished = false;
+  const finishOnce = () => {
+    if (isFinished) return;
+    isFinished = true;
+    finishReset();
+  };
+  detail.addEventListener("animationend", finishOnce, { once: true });
+  window.setTimeout(finishOnce, 210);
 };
 
 const activateTeamPanel = (group, resetDetails = true) => {
@@ -782,7 +848,7 @@ const activateTeamPanel = (group, resetDetails = true) => {
   });
 };
 
-const showMemberDetail = (group, member) => {
+const showMemberDetail = (group, member, trigger) => {
   if (!teamRoot) return;
   activateTeamPanel(group, false);
   const panel = teamRoot.querySelector(`[data-team-group="${group}"]`);
@@ -826,6 +892,17 @@ const showMemberDetail = (group, member) => {
 
   content.append(hero, details);
   applyLanguage(content);
+
+  const panelRect = panel.getBoundingClientRect();
+  const triggerRect = trigger?.getBoundingClientRect();
+  if (triggerRect) {
+    const originX = Math.max(0, Math.min(panelRect.width, triggerRect.left + triggerRect.width / 2 - panelRect.left));
+    const originY = Math.max(0, Math.min(panelRect.height, triggerRect.top + triggerRect.height / 2 - panelRect.top));
+    detail.style.setProperty("--member-origin-x", `${originX.toFixed(1)}px`);
+    detail.style.setProperty("--member-origin-y", `${originY.toFixed(1)}px`);
+  }
+
+  detail.classList.remove("is-closing");
   roster.hidden = true;
   detail.hidden = false;
   panel.classList.add("is-viewing-member");
@@ -860,13 +937,13 @@ const createMemberCard = (group, member) => {
   expandIcon.textContent = "↗";
 
   card.append(copy, expandIcon);
-  card.addEventListener("click", () => showMemberDetail(group, member));
+  card.addEventListener("click", () => showMemberDetail(group, member, card));
   return card;
 };
 
-const createDegreeColumn = (group, title, members) => {
+const createDegreeColumn = (group, title, members, degreeType) => {
   const column = document.createElement("section");
-  column.className = "degree-column";
+  column.className = `degree-column degree-column-${degreeType}`;
 
   const heading = document.createElement("div");
   heading.className = "degree-column-heading";
@@ -901,8 +978,8 @@ const renderTeam = () => {
       const masterMembers = members.filter((member) => member.degree === "master");
       list.classList.add("is-degree-columns");
       list.append(
-        createDegreeColumn(group, "博士 / 硕博研究生", doctoralMembers),
-        createDegreeColumn(group, "硕士研究生", masterMembers)
+        createDegreeColumn(group, "博士 / 硕博研究生", doctoralMembers, "doctoral"),
+        createDegreeColumn(group, "硕士研究生", masterMembers, "master")
       );
     } else {
       list.classList.remove("is-degree-columns");
@@ -915,8 +992,7 @@ const renderTeam = () => {
     });
 
     panel.querySelector("[data-team-back]")?.addEventListener("click", () => {
-      resetTeamDetail(panel);
-      lastFocusedElement?.focus?.({ preventScroll: true });
+      resetTeamDetail(panel, true);
     });
   });
 };
@@ -975,10 +1051,6 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && easterEggModal && !easterEggModal.hidden) {
-    closeEasterEggModal();
-    return;
-  }
   const openNews = getOpenNewsModal();
   if (event.key === "Escape" && openNews) {
     closeNewsModal(openNews);
@@ -986,8 +1058,7 @@ document.addEventListener("keydown", (event) => {
   }
   const openMemberDetail = teamRoot?.querySelector(".team-panel.is-viewing-member");
   if (event.key === "Escape" && openMemberDetail) {
-    resetTeamDetail(openMemberDetail);
-    lastFocusedElement?.focus?.({ preventScroll: true });
+    resetTeamDetail(openMemberDetail, true);
     return;
   }
   if (event.key === "Escape") closeSectionNavigator();

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title desc">
+  <title id="title">YAN LAB symbol</title>
+  <desc id="desc">A Y monogram formed as two micro-mechanical probes meeting at a copper material node.</desc>
+  <defs>
+    <mask id="joint-cutout" maskUnits="userSpaceOnUse" x="38" y="28" width="184" height="204">
+      <rect x="38" y="28" width="184" height="204" fill="#fff"/>
+      <path d="M130 91 146 107 130 123 114 107Z" fill="#000"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#joint-cutout)">
+    <path
+      fill="#102D34"
+      d="M38 28h58l34 45v159H83V124Z"
+    />
+    <path
+      fill="#1F7473"
+      d="M164 28h58l-45 55-47 41V73Z"
+    />
+    <path
+      fill="#1F7473"
+      d="M130 73l47 51v108h-47Z"
+    />
+  </g>
+
+  <path fill="#D08A52" d="M130 98 139 107 130 116 121 107Z"/>
+</svg>

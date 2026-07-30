@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="title desc">
+  <title id="title">YAN LAB logo</title>
+  <desc id="desc">A custom Y monogram formed as two micro-mechanical probes meeting at a copper material node, directly forming the first letter of the YAN LAB wordmark.</desc>
+  <defs>
+    <mask id="joint-cutout" maskUnits="userSpaceOnUse" x="38" y="28" width="184" height="204">
+      <rect x="38" y="28" width="184" height="204" fill="#fff"/>
+      <path d="M130 91 146 107 130 123 114 107Z" fill="#000"/>
+    </mask>
+  </defs>
+
+  <g transform="translate(25 49) scale(.62)">
+    <g mask="url(#joint-cutout)">
+      <path
+        fill="#102D34"
+        d="M38 28h58l34 45v159H83V124Z"
+      />
+      <path
+        fill="#1F7473"
+        d="M164 28h58l-45 55-47 41V73Z"
+      />
+      <path
+        fill="#1F7473"
+        d="M130 73l47 51v108h-47Z"
+      />
+    </g>
+    <path fill="#D08A52" d="M130 98 139 107 130 116 121 107Z"/>
+  </g>
+
+  <text
+    x="170"
+    y="194"
+    fill="#102D34"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="160"
+    font-weight="700"
+    letter-spacing="1"
+  >AN</text>
+  <text
+    x="452"
+    y="194"
+    fill="#1F7473"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="118"
+    font-weight="700"
+    letter-spacing="6"
+  >LAB</text>
+</svg>
