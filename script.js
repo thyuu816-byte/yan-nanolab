@@ -16,13 +16,23 @@ const languageButtons = Array.from(document.querySelectorAll("[data-lang-option]
 const newsModals = Array.from(document.querySelectorAll("[data-news-modal]"));
 const newsModalOpenButtons = Array.from(document.querySelectorAll("[data-news-modal-open]"));
 const newsModalCloseButtons = Array.from(document.querySelectorAll("[data-news-modal-close]"));
+const newsList = document.querySelector("[data-news-list]");
+const newsItems = Array.from(newsList?.querySelectorAll(":scope > article") || []);
+const newsPagination = document.querySelector("[data-news-pagination]");
+const newsPageNumbers = document.querySelector("[data-news-page-numbers]");
+const newsPagePrevious = document.querySelector("[data-news-page-prev]");
+const newsPageNext = document.querySelector("[data-news-page-next]");
+const newsPageStatus = document.querySelector("[data-news-page-status]");
 const publicationFilterButtons = Array.from(document.querySelectorAll("[data-paper-filter]"));
 const paperItems = Array.from(document.querySelectorAll(".paper-list li"));
+const newsPageSize = 6;
+const newsPageCount = Math.max(1, Math.ceil(newsItems.length / newsPageSize));
 let activeHeroSlide = 0;
 let heroTimer;
 let lastFocusedElement;
 let currentLanguage = "zh";
 let activeNewsModal;
+let activeNewsPage = 1;
 
 const languageText = {
   "闫亚宾教授课题组": "Yan Yabin Research Group",
@@ -297,6 +307,8 @@ const languageText = {
   "大会报告现场": "Plenary session",
   "原文链接：": "Original article: ",
   "论文首页：": "Article front page: ",
+  "上一页": "Previous",
+  "下一页": "Next",
   "课题组赴无锡开展春日团建活动": "Research Group Spring Outing in Wuxi",
   "2024 年 4 月，课题组师生前往无锡，在惠山国家森林公园、惠山古镇与南长街度过了一段轻松愉快的春日时光。":
     "In April 2024, the group traveled to Wuxi for a relaxed spring outing at Huishan National Forest Park, Huishan Ancient Town, and Nanchang Street.",
@@ -685,6 +697,7 @@ const applyLanguage = (root = document.body) => {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
+  syncNewsPaginationLanguage();
 };
 
 languageToggle?.addEventListener("click", (event) => {
@@ -760,6 +773,82 @@ newsModalOpenButtons.forEach((button) => {
 newsModalCloseButtons.forEach((button) => {
   button.addEventListener("click", () => closeNewsModal(button.closest("[data-news-modal]")));
 });
+
+function syncNewsPaginationLanguage() {
+  if (!newsPagination) return;
+  const isEnglish = currentLanguage === "en";
+  newsPagination.setAttribute("aria-label", isEnglish ? "News pagination" : "新闻翻页");
+  newsPageNumbers?.setAttribute("aria-label", isEnglish ? "News pages" : "新闻页码");
+  newsPagePrevious?.setAttribute("aria-label", isEnglish ? "Previous news page" : "上一页");
+  newsPageNext?.setAttribute("aria-label", isEnglish ? "Next news page" : "下一页");
+
+  newsPageNumbers?.querySelectorAll("[data-news-page]").forEach((button) => {
+    const page = Number(button.dataset.newsPage);
+    button.setAttribute("aria-label", isEnglish ? `Page ${page}` : `第 ${page} 页`);
+  });
+
+  if (newsPageStatus) {
+    newsPageStatus.textContent = isEnglish
+      ? `Page ${activeNewsPage} of ${newsPageCount}`
+      : `第 ${activeNewsPage} / ${newsPageCount} 页`;
+  }
+}
+
+const renderNewsPage = (page, shouldScroll = false) => {
+  if (!newsItems.length) return;
+  activeNewsPage = Math.min(newsPageCount, Math.max(1, page));
+  const pageStart = (activeNewsPage - 1) * newsPageSize;
+  const pageEnd = pageStart + newsPageSize;
+
+  newsItems.forEach((item, index) => {
+    item.hidden = index < pageStart || index >= pageEnd;
+  });
+
+  newsPageNumbers?.querySelectorAll("[data-news-page]").forEach((button) => {
+    const isActive = Number(button.dataset.newsPage) === activeNewsPage;
+    button.classList.toggle("is-active", isActive);
+    if (isActive) button.setAttribute("aria-current", "page");
+    else button.removeAttribute("aria-current");
+  });
+
+  if (newsPagePrevious) newsPagePrevious.disabled = activeNewsPage === 1;
+  if (newsPageNext) newsPageNext.disabled = activeNewsPage === newsPageCount;
+  syncNewsPaginationLanguage();
+
+  if (shouldScroll) {
+    window.requestAnimationFrame(() => {
+      newsList?.scrollIntoView({
+        behavior: shouldReduceMotion() ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  }
+};
+
+if (newsPagination && newsPageNumbers && newsPageCount > 1) {
+  const pageButtons = document.createDocumentFragment();
+  for (let page = 1; page <= newsPageCount; page += 1) {
+    const button = document.createElement("button");
+    button.className = "news-page-button";
+    button.type = "button";
+    button.dataset.newsPage = String(page);
+    button.setAttribute("aria-controls", "news-list");
+    button.textContent = String(page);
+    pageButtons.appendChild(button);
+  }
+  newsPageNumbers.appendChild(pageButtons);
+  newsPagination.hidden = false;
+}
+
+newsPagePrevious?.addEventListener("click", () => renderNewsPage(activeNewsPage - 1, true));
+newsPageNext?.addEventListener("click", () => renderNewsPage(activeNewsPage + 1, true));
+newsPageNumbers?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-news-page]");
+  if (!button) return;
+  renderNewsPage(Number(button.dataset.newsPage), true);
+});
+
+renderNewsPage(1);
 
 const setPublicationFilter = (year) => {
   paperItems.forEach((item) => {

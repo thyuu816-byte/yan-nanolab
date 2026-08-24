@@ -9,7 +9,7 @@
       content="华东理工大学机械与动力工程学院闫亚宾教授课题组，聚焦材料与结构可靠性、微纳尺度原位实验、功能材料设计与精密实验仪器开发。"
     />
     <link rel="stylesheet" href="./styles.css?v=20260730mobile1" />
-    <link rel="stylesheet" href="./styles-v2.css?v=20260730mobile-density1" />
+    <link rel="stylesheet" href="./styles-v2.css?v=20260824pagination1" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -687,7 +687,8 @@
             <p class="eyebrow">News</p>
             <h2>新闻动态</h2>
           </div>
-          <div class="news-list reveal">
+          <div class="news-feed">
+          <div class="news-list reveal" id="news-list" data-news-list>
             <article>
               <time datetime="2026-08">2026.08</time>
               <button class="news-card-button" type="button" data-news-modal-open="#cej-hydrogel-news-modal">
@@ -784,6 +785,19 @@
                 </span>
               </button>
             </article>
+          </div>
+          <nav class="news-pagination reveal" data-news-pagination aria-label="新闻翻页" hidden>
+            <button class="news-page-action" type="button" data-news-page-prev aria-controls="news-list" aria-label="上一页">
+              <span aria-hidden="true">←</span>
+              <span class="news-page-action-label">上一页</span>
+            </button>
+            <div class="news-page-numbers" data-news-page-numbers aria-label="新闻页码"></div>
+            <button class="news-page-action" type="button" data-news-page-next aria-controls="news-list" aria-label="下一页">
+              <span class="news-page-action-label">下一页</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <span class="news-page-status" data-news-page-status aria-live="polite"></span>
+          </nav>
           </div>
         </div>
       </section>
@@ -1334,7 +1348,7 @@
 
     <script src="./team-data.js?v=20260617blank"></script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script src="./script.js?v=20260824news1"></script>
+    <script src="./script.js?v=20260824pagination1"></script>
     <script src="./script-v2.js?v=20260730particles2"></script>
   </body>
 </html>
