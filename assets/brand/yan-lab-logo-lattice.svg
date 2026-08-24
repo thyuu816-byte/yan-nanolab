@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-labelledby="title desc">
+  <title id="title">YAN LAB lattice logo</title>
+  <desc id="desc">A custom Y monogram with a hexagonal two-dimensional material lattice at its load-bearing junction, directly forming the first letter of the YAN LAB wordmark.</desc>
+  <defs>
+    <mask id="lattice-cutout" maskUnits="userSpaceOnUse" x="38" y="28" width="184" height="204">
+      <rect x="38" y="28" width="184" height="204" fill="#fff"/>
+      <path d="M130 82 155 107 130 132 105 107Z" fill="#000"/>
+    </mask>
+  </defs>
+
+  <g transform="translate(25 49) scale(.62)">
+    <g mask="url(#lattice-cutout)">
+      <path fill="#102D34" d="M38 28h58l34 45v159H83V124Z"/>
+      <path fill="#1F7473" d="M164 28h58l-45 55-47 41V73Z"/>
+      <path fill="#1F7473" d="M130 73l47 51v108h-47Z"/>
+    </g>
+
+    <path fill="#FFFFFF" d="M130 84 153 107 130 130 107 107Z"/>
+    <g fill="none" stroke="#102D34" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M119 101 130 95 141 101 141 113 130 119 119 113Z"/>
+      <path d="m119 101-7-6m29 6 7-6m-7 18 7 6m-29-6-7 6"/>
+    </g>
+    <g fill="#1F7473">
+      <circle cx="119" cy="101" r="3.2"/>
+      <circle cx="130" cy="95" r="3.2"/>
+      <circle cx="141" cy="101" r="3.2"/>
+      <circle cx="141" cy="113" r="3.2"/>
+      <circle cx="130" cy="119" r="3.2"/>
+      <circle cx="119" cy="113" r="3.2"/>
+    </g>
+    <g fill="#102D34">
+      <circle cx="112" cy="95" r="2.5"/>
+      <circle cx="148" cy="95" r="2.5"/>
+      <circle cx="148" cy="119" r="2.5"/>
+      <circle cx="112" cy="119" r="2.5"/>
+    </g>
+  </g>
+
+  <text
+    x="170"
+    y="194"
+    fill="#102D34"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="160"
+    font-weight="700"
+    letter-spacing="1"
+  >AN</text>
+  <text
+    x="452"
+    y="194"
+    fill="#1F7473"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="118"
+    font-weight="700"
+    letter-spacing="6"
+  >LAB</text>
+</svg>

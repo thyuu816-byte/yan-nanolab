@@ -181,6 +181,40 @@ const languageText = {
   "2025-至今": "2025-Present",
   "ResearchGate 主页": "ResearchGate Profile",
   "2016–2021": "2016–2021",
+  "余天昊、荣超等在 CEJ 发表仿生取向导电水凝胶研究":
+    "Yu Tianhao, Rong Chao et al. Report Bioinspired Oriented Conductive Hydrogels in CEJ",
+  "余天昊、荣超、苏婷、万拾佳等合作完成的研究论文“":
+    "The research paper by Yu Tianhao, Rong Chao, Su Ting, Wan Shijia, and collaborators, titled \"",
+  "该工作受": "Inspired by the highly ordered lamellar structure of the",
+  "外骨骼高度有序层片结构启发，重点提出序贯刮涂自组装（sequential blade-coating self-assembly，SBCSA）策略。每轮刮涂诱导二维 MXene 纳米片面内取向，并将一维银纳米线限制在层间；受控干燥固定当前取向后再沉积下一层，使取向结构沿薄膜厚度连续继承，形成兼具高效应力传递和稳定导电通路的仿生层状网络。":
+    "exoskeleton, this work introduces a sequential blade-coating self-assembly (SBCSA) strategy. Each coating step aligns two-dimensional MXene nanosheets in-plane and confines one-dimensional silver nanowires between layers. Controlled drying fixes the current orientation before the next layer is deposited, allowing the oriented structure to be continuously inherited through the film thickness and forming a biomimetic lamellar network that combines efficient stress transfer with stable conductive pathways.",
+  "基于 SBCSA 制备的 PVA/MXene/AgNW 水凝胶实现了 16.67–23.12 MPa 的拉伸强度、62.91–80.69 MJ m":
+    "The PVA/MXene/AgNW hydrogels fabricated by SBCSA achieve tensile strengths of 16.67–23.12 MPa, toughness values of 62.91–80.69 MJ m",
+  "的韧性以及 1.62–27.15 mS m": "and electrical conductivities of 1.62–27.15 mS m",
+  "的电导率，并表现出灵敏、快速且耐久的应变传感性能。":
+    "while delivering sensitive, rapid, and durable strain-sensing performance.",
+  "研究配图：SBCSA 仿生层状导电水凝胶的设计与性能":
+    "Research graphic: design and performance of an SBCSA-enabled biomimetic lamellar conductive hydrogel",
+  "苏婷等在 IJMS 发表双层石墨烯面内剪切研究":
+    "Su Ting et al. Report the In-Plane Shear Response of Bilayer Graphene in IJMS",
+  "苏婷、荣超、余天昊、万拾佳等合作完成的研究论文“":
+    "The research paper by Su Ting, Rong Chao, Yu Tianhao, Wan Shijia, and collaborators, titled \"",
+  "研究通过原位面内剪切实验直接测量悬空双层石墨烯的剪切模量、剪切断裂强度和极限剪切应变，并结合分子动力学模拟考察试样宽长比对剪切承载与起皱行为的影响。":
+    "In-situ in-plane shear experiments directly measured the shear modulus, shear fracture strength, and ultimate shear strain of freestanding bilayer graphene. Molecular dynamics simulations were also used to examine how the specimen width-to-length ratio affects shear load-bearing capacity and wrinkling.",
+  "结果表明，增大试样宽度可提升剪切模量和剪切强度，并形成数量更多、间距更小的褶皱。该工作为通过几何参数调控双层石墨烯纳米器件的结构性能提供了实验依据。":
+    "The results show that increasing specimen width improves both shear modulus and shear strength while producing more numerous and closely spaced wrinkles. The work provides experimental guidance for tuning the structural performance of bilayer-graphene nanodevices through geometric design.",
+  "研究配图：悬空双层石墨烯的原位面内剪切测试、尺寸效应与起皱行为":
+    "Research graphic: in-situ in-plane shear testing, size effects, and wrinkling of freestanding bilayer graphene",
+  "苏婷、荣超等在 Nano Research 发表双金属 MXene 拉伸性能研究":
+    "Su Ting, Rong Chao et al. Report the Tensile Properties of a Dual-Metal MXene in Nano Research",
+  "苏婷、荣超、吴昊等合作完成的研究论文“":
+    "The research paper by Su Ting, Rong Chao, Wu Hao, and collaborators, titled \"",
+  "研究利用扫描电子显微镜内的 Push-to-Pull 装置直接测试悬空单层 Mo₂TiC₂Tₓ MXene，测得其杨氏模量为 563.09 ± 11.27 GPa，并通过密度泛函理论计算分析双过渡金属键合作用下的键长演化与电荷密度重分布。":
+    "A Push-to-Pull device inside a scanning electron microscope was used to directly test freestanding monolayer Mo₂TiC₂Tₓ MXene. Its Young's modulus was measured as 563.09 ± 11.27 GPa, while density functional theory calculations tracked bond-length evolution and charge-density redistribution associated with dual transition-metal bonding.",
+  "该工作揭示了双金属 MXene 高刚度和高强度的微观来源，为二维材料的结构可靠性评价、失效预测及先进能源与功能材料应用提供了实验和理论依据。":
+    "The work identifies the microscopic origin of the high stiffness and strength of dual-metal MXenes and provides experimental and theoretical support for structural reliability assessment, failure prediction, and advanced energy and functional-material applications.",
+  "研究配图：单层 Mo₂TiC₂Tₓ MXene 的原位拉伸测试与断裂响应":
+    "Research graphic: in-situ tensile testing and fracture response of monolayer Mo₂TiC₂Tₓ MXene",
   "恭喜苏婷同学顺利通过博士学位论文答辩！":
     "Congratulations to Su Ting on Successfully Passing Her Doctoral Dissertation Defense!",
   "热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。":
@@ -494,6 +528,9 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
       ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia cover for single-crystal tin plasticity"],
+      ["#cej-hydrogel-news-modal .paper-detail-figure img", "alt", "Structural design, blade-coating process, and electromechanical performance of an SBCSA-enabled biomimetic lamellar conductive hydrogel"],
+      ["#ijms-graphene-news-modal .paper-detail-figure img", "alt", "In-plane shear testing, size effects, and wrinkling of freestanding bilayer graphene"],
+      ["#nano-research-mxene-news-modal .paper-detail-figure img", "alt", "In-situ tensile device, atomic structure, and fracture curve of monolayer Mo₂TiC₂Tₓ MXene"],
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences article page on Ti₂AlNb alloy micromechanics"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue article page on microscale single-crystal copper fatigue"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing review article page on 2D material mechanics"],
@@ -549,6 +586,9 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
       ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究论文封面"],
+      ["#cej-hydrogel-news-modal .paper-detail-figure img", "alt", "SBCSA 策略制备仿生层状导电水凝胶的结构设计、刮涂过程与力电性能"],
+      ["#ijms-graphene-news-modal .paper-detail-figure img", "alt", "悬空双层石墨烯面内剪切测试、尺寸效应和起皱行为研究图"],
+      ["#nano-research-mxene-news-modal .paper-detail-figure img", "alt", "单层 Mo₂TiC₂Tₓ MXene 原位拉伸装置、原子结构和断裂曲线"],
       ["#ijms-tialnb-news-modal .paper-detail-figure img", "alt", "International Journal of Mechanical Sciences Ti₂AlNb 合金微力学研究论文首页"],
       ["#ijf-copper-news-modal .paper-detail-figure img", "alt", "International Journal of Fatigue 微尺度单晶铜疲劳研究论文首页"],
       ["#ijem-2d-materials-news-modal .paper-detail-figure img", "alt", "International Journal of Extreme Manufacturing 二维材料力学综述论文首页"],

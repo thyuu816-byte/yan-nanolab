@@ -9,7 +9,7 @@
       content="华东理工大学机械与动力工程学院闫亚宾教授课题组，聚焦材料与结构可靠性、微纳尺度原位实验、功能材料设计与精密实验仪器开发。"
     />
     <link rel="stylesheet" href="./styles.css?v=20260730mobile1" />
-    <link rel="stylesheet" href="./styles-v2.css?v=20260730mobile3" />
+    <link rel="stylesheet" href="./styles-v2.css?v=20260730mobile-density1" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -109,7 +109,10 @@
           <span class="hero-news-label">最新</span>
           <div class="hero-news-window">
             <div class="hero-news-track">
+              <a href="#news"><time datetime="2026-08">2026.08</time> 余天昊、荣超等在 CEJ 发表仿生取向导电水凝胶研究</a>
+              <a href="#news"><time datetime="2026-08">2026.08</time> 苏婷等在 IJMS 发表双层石墨烯面内剪切研究</a>
               <a href="#news"><time datetime="2026-07">2026.07</time> 恭喜苏婷同学顺利通过博士学位论文答辩！</a>
+              <a href="#news"><time datetime="2026-06">2026.06</time> 苏婷、荣超等在 Nano Research 发表双金属 MXene 拉伸性能研究</a>
               <a href="#news"><time datetime="2026-06">2026.06</time> 万拾佳等在 Acta Materialia 发表单晶锡微尺度塑性研究</a>
               <a href="#news"><time datetime="2026-06">2026.06</time> 恭喜23级五位硕士毕业生顺利毕业</a>
               <a href="#news"><time datetime="2026-05">2026.05</time> 苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026</a>
@@ -118,7 +121,10 @@
               <a href="#news"><time datetime="2026-02">2026.02</time> 王祎珩等在 IJF 发表微尺度单晶铜疲劳研究</a>
               <a href="#news"><time datetime="2025-09">2025.09</time> 苏婷、荣超等在 IJEM 发表二维材料力学综述</a>
               <a href="#news"><time datetime="2024-04">2024.04</time> 课题组赴无锡开展春日团建活动</a>
+              <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-08">2026.08</time> 余天昊、荣超等在 CEJ 发表仿生取向导电水凝胶研究</a>
+              <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-08">2026.08</time> 苏婷等在 IJMS 发表双层石墨烯面内剪切研究</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-07">2026.07</time> 恭喜苏婷同学顺利通过博士学位论文答辩！</a>
+              <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-06">2026.06</time> 苏婷、荣超等在 Nano Research 发表双金属 MXene 拉伸性能研究</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-06">2026.06</time> 万拾佳等在 Acta Materialia 发表单晶锡微尺度塑性研究</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-06">2026.06</time> 恭喜23级五位硕士毕业生顺利毕业</a>
               <a href="#news" aria-hidden="true" tabindex="-1"><time datetime="2026-05">2026.05</time> 苏婷、万拾佳赴英国格拉斯哥参加 ESIA18-ISSI2026</a>
@@ -683,10 +689,34 @@
           </div>
           <div class="news-list reveal">
             <article>
+              <time datetime="2026-08">2026.08</time>
+              <button class="news-card-button" type="button" data-news-modal-open="#cej-hydrogel-news-modal">
+                <span>
+                  <strong>余天昊、荣超等在 CEJ 发表仿生取向导电水凝胶研究</strong>
+                </span>
+              </button>
+            </article>
+            <article>
+              <time datetime="2026-08">2026.08</time>
+              <button class="news-card-button" type="button" data-news-modal-open="#ijms-graphene-news-modal">
+                <span>
+                  <strong>苏婷等在 IJMS 发表双层石墨烯面内剪切研究</strong>
+                </span>
+              </button>
+            </article>
+            <article>
               <time datetime="2026-07">2026.07</time>
               <button class="news-card-button" type="button" data-news-modal-open="#su-ting-defense-news-modal">
                 <span>
                   <strong>恭喜苏婷同学顺利通过博士学位论文答辩！</strong>
+                </span>
+              </button>
+            </article>
+            <article>
+              <time datetime="2026-06">2026.06</time>
+              <button class="news-card-button" type="button" data-news-modal-open="#nano-research-mxene-news-modal">
+                <span>
+                  <strong>苏婷、荣超等在 Nano Research 发表双金属 MXene 拉伸性能研究</strong>
                 </span>
               </button>
             </article>
@@ -757,6 +787,102 @@
           </div>
         </div>
       </section>
+
+      <div class="news-modal" id="cej-hydrogel-news-modal" data-news-modal hidden>
+        <div class="news-modal-backdrop" data-news-modal-close></div>
+        <section
+          class="news-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="cej-hydrogel-news-title"
+        >
+          <button class="news-modal-close" type="button" data-news-modal-close aria-label="关闭新闻弹窗">×</button>
+          <div class="news-modal-header">
+            <time datetime="2026-08">2026.08</time>
+            <h3 id="cej-hydrogel-news-title">余天昊、荣超等在 CEJ 发表仿生取向导电水凝胶研究</h3>
+            <p>余天昊、荣超、苏婷、万拾佳等合作完成的研究论文“<em>Bioinspired orientation-regulated conductive hydrogels with hierarchical lamellar architecture for synergistic mechanical and electrical robustness</em>”发表在 <em>Chemical Engineering Journal</em>, 2026, 180699。</p>
+          </div>
+          <div class="news-modal-body">
+            <p>
+              该工作受 <em>Chondracris rosea</em> 外骨骼高度有序层片结构启发，重点提出序贯刮涂自组装（sequential blade-coating self-assembly，SBCSA）策略。每轮刮涂诱导二维 MXene 纳米片面内取向，并将一维银纳米线限制在层间；受控干燥固定当前取向后再沉积下一层，使取向结构沿薄膜厚度连续继承，形成兼具高效应力传递和稳定导电通路的仿生层状网络。
+            </p>
+            <p>
+              基于 SBCSA 制备的 PVA/MXene/AgNW 水凝胶实现了 16.67–23.12 MPa 的拉伸强度、62.91–80.69 MJ m<sup>−3</sup> 的韧性以及 1.62–27.15 mS m<sup>−1</sup> 的电导率，并表现出灵敏、快速且耐久的应变传感性能。
+            </p>
+            <p class="news-reference">
+              原文链接：<a href="https://doi.org/10.1016/j.cej.2026.180699" target="_blank" rel="noreferrer">https://doi.org/10.1016/j.cej.2026.180699</a>
+            </p>
+          </div>
+          <div class="paper-detail-figure">
+            <img data-src="./assets/cej-sbcsa-hydrogel.png?v=20260824" alt="SBCSA 策略制备仿生层状导电水凝胶的结构设计、刮涂过程与力电性能" loading="lazy" decoding="async" />
+            <p>研究配图：SBCSA 仿生层状导电水凝胶的设计与性能</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="news-modal" id="ijms-graphene-news-modal" data-news-modal hidden>
+        <div class="news-modal-backdrop" data-news-modal-close></div>
+        <section
+          class="news-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="ijms-graphene-news-title"
+        >
+          <button class="news-modal-close" type="button" data-news-modal-close aria-label="关闭新闻弹窗">×</button>
+          <div class="news-modal-header">
+            <time datetime="2026-08">2026.08</time>
+            <h3 id="ijms-graphene-news-title">苏婷等在 IJMS 发表双层石墨烯面内剪切研究</h3>
+            <p>苏婷、荣超、余天昊、万拾佳等合作完成的研究论文“<em>In-plane shear response and size effects in freestanding bilayer graphene</em>”发表在 <em>International Journal of Mechanical Sciences</em>, 328 (2026) 112000。</p>
+          </div>
+          <div class="news-modal-body">
+            <p>
+              研究通过原位面内剪切实验直接测量悬空双层石墨烯的剪切模量、剪切断裂强度和极限剪切应变，并结合分子动力学模拟考察试样宽长比对剪切承载与起皱行为的影响。
+            </p>
+            <p>
+              结果表明，增大试样宽度可提升剪切模量和剪切强度，并形成数量更多、间距更小的褶皱。该工作为通过几何参数调控双层石墨烯纳米器件的结构性能提供了实验依据。
+            </p>
+            <p class="news-reference">
+              原文链接：<a href="https://doi.org/10.1016/j.ijmecsci.2026.112000" target="_blank" rel="noreferrer">https://doi.org/10.1016/j.ijmecsci.2026.112000</a>
+            </p>
+          </div>
+          <div class="paper-detail-figure">
+            <img data-src="./assets/ijms-bilayer-graphene.png?v=20260824" alt="悬空双层石墨烯面内剪切测试、尺寸效应和起皱行为研究图" loading="lazy" decoding="async" />
+            <p>研究配图：悬空双层石墨烯的原位面内剪切测试、尺寸效应与起皱行为</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="news-modal" id="nano-research-mxene-news-modal" data-news-modal hidden>
+        <div class="news-modal-backdrop" data-news-modal-close></div>
+        <section
+          class="news-modal-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="nano-research-mxene-news-title"
+        >
+          <button class="news-modal-close" type="button" data-news-modal-close aria-label="关闭新闻弹窗">×</button>
+          <div class="news-modal-header">
+            <time datetime="2026-06">2026.06</time>
+            <h3 id="nano-research-mxene-news-title">苏婷、荣超等在 Nano Research 发表双金属 MXene 拉伸性能研究</h3>
+            <p>苏婷、荣超、吴昊等合作完成的研究论文“<em>Ultrahigh elastic modulus and tensile strength of monolayer Mo<sub>2</sub>TiC<sub>2</sub>T<sub>x</sub> MXene by dual transition metal bonding</em>”发表在 <em>Nano Research</em>。</p>
+          </div>
+          <div class="news-modal-body">
+            <p>
+              研究利用扫描电子显微镜内的 Push-to-Pull 装置直接测试悬空单层 Mo₂TiC₂Tₓ MXene，测得其杨氏模量为 563.09 ± 11.27 GPa，并通过密度泛函理论计算分析双过渡金属键合作用下的键长演化与电荷密度重分布。
+            </p>
+            <p>
+              该工作揭示了双金属 MXene 高刚度和高强度的微观来源，为二维材料的结构可靠性评价、失效预测及先进能源与功能材料应用提供了实验和理论依据。
+            </p>
+            <p class="news-reference">
+              原文链接：<a href="https://doi.org/10.26599/NR.2026.94908929" target="_blank" rel="noreferrer">https://doi.org/10.26599/NR.2026.94908929</a>
+            </p>
+          </div>
+          <div class="paper-detail-figure">
+            <img data-src="./assets/nano-research-mxene.png?v=20260824" alt="单层 Mo₂TiC₂Tₓ MXene 原位拉伸装置、原子结构和断裂曲线" loading="lazy" decoding="async" />
+            <p>研究配图：单层 Mo₂TiC₂Tₓ MXene 的原位拉伸测试与断裂响应</p>
+          </div>
+        </section>
+      </div>
 
       <div class="news-modal" id="su-ting-defense-news-modal" data-news-modal hidden>
         <div class="news-modal-backdrop" data-news-modal-close></div>
@@ -1208,7 +1334,7 @@
 
     <script src="./team-data.js?v=20260617blank"></script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script src="./script.js?v=20260730motion-lite4"></script>
+    <script src="./script.js?v=20260824news1"></script>
     <script src="./script-v2.js?v=20260730particles2"></script>
   </body>
 </html>
