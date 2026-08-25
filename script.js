@@ -23,9 +23,11 @@ const newsPageNumbers = document.querySelector("[data-news-page-numbers]");
 const newsPagePrevious = document.querySelector("[data-news-page-prev]");
 const newsPageNext = document.querySelector("[data-news-page-next]");
 const newsPageStatus = document.querySelector("[data-news-page-status]");
+const homeNewsTrack = document.querySelector("[data-home-news-track]");
 const publicationFilterButtons = Array.from(document.querySelectorAll("[data-paper-filter]"));
 const paperItems = Array.from(document.querySelectorAll(".paper-list li"));
 const newsPageSize = 6;
+const homeNewsItemLimit = 6;
 const newsPageCount = Math.max(1, Math.ceil(newsItems.length / newsPageSize));
 let activeHeroSlide = 0;
 let heroTimer;
@@ -65,6 +67,7 @@ const languageText = {
   "看新闻动态": "Read News",
   "认识团队成员": "Meet the Team",
   "课题组新闻": "Group News",
+  "最新": "Latest",
   "发表论文": "Publications",
   "申请/授权发明专利": "Patent Applications / Grants",
   "软件著作权": "Software Copyrights",
@@ -250,7 +253,7 @@ const languageText = {
     "Dong Yahui, Wan Shijia et al. Report Interphase Plasticity in Ti₂AlNb Alloys in IJMS",
   "董亚辉、万拾佳、王祎珩、苏婷等合作完成的研究论文“":
     "The research paper by Dong Yahui, Wan Shijia, Wang Yiheng, Su Ting, and collaborators, titled \"",
-  "”发表在 ": "\", was published in ",
+  "”发表在": "\" was published in ",
   "Ti₂AlNb 合金兼具低密度、比强度、抗蠕变和抗氧化性能，是面向航空高温构件的轻质候选材料。其 B2 相具有较好的塑性，O 相具有较高强度，两相之间的应力分配与滑移传递决定了合金的强塑性匹配，但小尺度下相界作用与尺寸效应仍缺乏定量认识。":
     "Ti₂AlNb alloys combine low density with high specific strength, creep resistance, and oxidation resistance, making them promising lightweight materials for high-temperature aerospace components. Their B2 phase provides ductility and their O phase provides strength. Stress partitioning and slip transfer between these phases control the strength-ductility balance, yet quantitative understanding of interphase effects and size dependence at small scales remains incomplete.",
   "制备直径为 1、2 和 3 μm 的双相微柱，利用原位 SEM 微柱压缩实验观察塑性变形，并建立双相晶体塑性有限元模型，分析不同 O 相分布和微柱尺寸下的相间力学耦合。":
@@ -338,6 +341,23 @@ const languageText = {
   "教师主页": "Faculty Profile",
   "返回顶部": "Back to Top",
   "研究方向配图来源：": "Research image credits:",
+  "；实验装置图由课题组提供。": "; experimental apparatus image provided by the research group.",
+  "论文封面：": "Paper cover:",
+  "综述：微纳米尺度材料与结构的原位疲劳实验及性能研究进展.":
+    "Review of in-situ fatigue experiments and properties of materials and structures at the micro- and nanoscale.",
+  "李振凯, 闫亚宾*, 轩福贞*.": "Li Zhenkai, Yan Yabin*, Xuan Fuzhen*.",
+  "实验力学, 39: 95-114, 2024.": "Journal of Experimental Mechanics, 39: 95-114, 2024.",
+  "复合固体推进剂界面多尺度数值模拟研究进展.":
+    "Progress in multiscale numerical simulation of interfaces in composite solid propellants.",
+  "余天昊, 闫亚宾*, 王晓媛*.": "Yu Tianhao, Yan Yabin*, Wang Xiaoyuan*.",
+  "含能材料, 32: 554-569, 2024.": "Chinese Journal of Energetic Materials, 32: 554-569, 2024.",
+  "正在提交": "Submitting",
+  "正在发送留言，请稍候。": "Sending your message. Please wait.",
+  "留言已收到，感谢您的来访。": "Your message has been received. Thank you for visiting.",
+  "提交成功": "Submitted",
+  "留言后台正在配置，请稍后再试。": "The message service is being configured. Please try again later.",
+  "暂时未能提交，请检查网络后重试。": "The message could not be sent. Please check your connection and try again.",
+  "重新提交": "Try Again",
   "苏婷": "Su Ting",
   "万拾佳": "Wan Shijia",
   "余天昊": "Yu Tianhao",
@@ -614,6 +634,15 @@ const attributeTranslations = {
 
 const originalTextNodes = new WeakMap();
 
+const normalizeEnglishPunctuation = (text) =>
+  text
+    .replaceAll("，", ", ")
+    .replaceAll("；", "; ")
+    .replaceAll("。", ".")
+    .replaceAll("：", ": ")
+    .replaceAll("“", '"')
+    .replaceAll("”", '"');
+
 const translateText = (text) => {
   const trimmed = text.trim();
   if (!trimmed) return text;
@@ -622,11 +651,11 @@ const translateText = (text) => {
   const memberCount = trimmed.match(/^(\d+) 位成员$/);
   const peopleCount = trimmed.match(/^(\d+) 位$/);
 
-  if (!translated && memberCount) translated = `${memberCount[1]} members`;
-  if (!translated && peopleCount) translated = `${peopleCount[1]} people`;
-  if (!translated) return text;
+  if (translated === undefined && memberCount) translated = `${memberCount[1]} members`;
+  if (translated === undefined && peopleCount) translated = `${peopleCount[1]} people`;
+  if (translated === undefined) return normalizeEnglishPunctuation(text);
 
-  return text.replace(trimmed, translated);
+  return normalizeEnglishPunctuation(text.replace(trimmed, translated));
 };
 
 const localizeText = (text) => (currentLanguage === "en" ? translateText(text) : text);
@@ -794,7 +823,43 @@ function syncNewsPaginationLanguage() {
   }
 }
 
-const renderNewsPage = (page, shouldScroll = false) => {
+const renderHomeNewsTicker = () => {
+  if (!homeNewsTrack || !newsItems.length) return;
+
+  const latestNews = [...newsItems]
+    .sort((first, second) => {
+      const firstDate = first.querySelector("time")?.dateTime || "";
+      const secondDate = second.querySelector("time")?.dateTime || "";
+      return secondDate.localeCompare(firstDate);
+    })
+    .slice(0, homeNewsItemLimit);
+  const tickerItems = document.createDocumentFragment();
+
+  [false, true].forEach((isDuplicate) => {
+    latestNews.forEach((item) => {
+      const sourceTime = item.querySelector("time");
+      const sourceTitle = item.querySelector("strong");
+      if (!sourceTime || !sourceTitle) return;
+
+      const link = document.createElement("a");
+      link.href = "#news";
+      if (isDuplicate) {
+        link.setAttribute("aria-hidden", "true");
+        link.tabIndex = -1;
+      }
+
+      const time = document.createElement("time");
+      time.dateTime = sourceTime.dateTime;
+      time.textContent = sourceTime.textContent.trim();
+      link.append(time, document.createTextNode(` ${sourceTitle.textContent.trim()}`));
+      tickerItems.appendChild(link);
+    });
+  });
+
+  homeNewsTrack.replaceChildren(tickerItems);
+};
+
+const renderNewsPage = (page) => {
   if (!newsItems.length) return;
   activeNewsPage = Math.min(newsPageCount, Math.max(1, page));
   const pageStart = (activeNewsPage - 1) * newsPageSize;
@@ -815,14 +880,6 @@ const renderNewsPage = (page, shouldScroll = false) => {
   if (newsPageNext) newsPageNext.disabled = activeNewsPage === newsPageCount;
   syncNewsPaginationLanguage();
 
-  if (shouldScroll) {
-    window.requestAnimationFrame(() => {
-      newsList?.scrollIntoView({
-        behavior: shouldReduceMotion() ? "auto" : "smooth",
-        block: "start",
-      });
-    });
-  }
 };
 
 if (newsPagination && newsPageNumbers && newsPageCount > 1) {
@@ -840,14 +897,15 @@ if (newsPagination && newsPageNumbers && newsPageCount > 1) {
   newsPagination.hidden = false;
 }
 
-newsPagePrevious?.addEventListener("click", () => renderNewsPage(activeNewsPage - 1, true));
-newsPageNext?.addEventListener("click", () => renderNewsPage(activeNewsPage + 1, true));
+newsPagePrevious?.addEventListener("click", () => renderNewsPage(activeNewsPage - 1));
+newsPageNext?.addEventListener("click", () => renderNewsPage(activeNewsPage + 1));
 newsPageNumbers?.addEventListener("click", (event) => {
   const button = event.target.closest("[data-news-page]");
   if (!button) return;
-  renderNewsPage(Number(button.dataset.newsPage), true);
+  renderNewsPage(Number(button.dataset.newsPage));
 });
 
+renderHomeNewsTicker();
 renderNewsPage(1);
 
 const setPublicationFilter = (year) => {
@@ -1138,9 +1196,9 @@ guestbookForm?.addEventListener("submit", async (event) => {
   const payload = Object.fromEntries(formData.entries());
 
   submitButton.disabled = true;
-  submitButton.textContent = "正在提交";
+  submitButton.textContent = localizeText("正在提交");
   guestbookForm.classList.remove("is-success", "is-error");
-  if (status) status.textContent = "正在发送留言，请稍候。";
+  if (status) status.textContent = localizeText("正在发送留言，请稍候。");
 
   try {
     const response = await fetch("/api/message", {
@@ -1154,18 +1212,19 @@ guestbookForm?.addEventListener("submit", async (event) => {
 
     guestbookForm.reset();
     guestbookForm.classList.add("is-success");
-    if (status) status.textContent = "留言已收到，感谢您的来访。";
-    submitButton.textContent = "提交成功";
+    if (status) status.textContent = localizeText("留言已收到，感谢您的来访。");
+    submitButton.textContent = localizeText("提交成功");
   } catch (error) {
     guestbookForm.classList.add("is-error");
     if (status) {
-      status.textContent =
+      status.textContent = localizeText(
         error.message === "MESSAGE_STORAGE_NOT_CONFIGURED"
           ? "留言后台正在配置，请稍后再试。"
-          : "暂时未能提交，请检查网络后重试。";
+          : "暂时未能提交，请检查网络后重试。"
+      );
     }
     submitButton.disabled = false;
-    submitButton.textContent = "重新提交";
+    submitButton.textContent = localizeText("重新提交");
   }
 });
 
