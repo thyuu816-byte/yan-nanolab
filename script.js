@@ -35,6 +35,8 @@ let lastFocusedElement;
 let currentLanguage = "zh";
 let activeNewsModal;
 let activeNewsPage = 1;
+let newsPageAnimationTimer;
+let newsListResizeTimer;
 
 const languageText = {
   "闫亚宾教授课题组": "Yan Yabin Research Group",
@@ -89,8 +91,6 @@ const languageText = {
   "阅读论文": "Read Paper",
   "查看全部代表性论文": "View All Selected Publications",
   "实验能力与研究方法": "Experimental Capabilities & Methods",
-  "从实验装置开发、微纳尺度原位观测到跨尺度模拟与数据驱动设计，形成面向失效机理和工程可靠性的完整研究链条。":
-    "From experimental-device development and in-situ micro/nano observation to multiscale modeling and data-driven design, we build an integrated workflow for failure mechanisms and engineering reliability.",
   "在电子显微环境中观察材料变形与失效": "Observing material deformation and failure inside electron microscopes",
   "原位电子显微实验": "In-Situ Electron Microscopy",
   "在微纳尺度实时表征材料的变形、裂纹萌生、疲劳与界面失效过程。":
@@ -171,8 +171,6 @@ const languageText = {
   "微纳尺度精密实验装置": "Micro/Nano-Scale Precision Experimental Systems",
   "开发适配电子显微镜的微型加载、环境控制和电化学实验装置，实现纳米尺度实时观测与多场耦合测试。":
     "We develop miniature loading, environmental control, and electrochemical devices compatible with electron microscopes for real-time nanoscale observation and multiphysics testing.",
-  "点击成员卡片查看研究方向、个人兴趣、毕业去向与联系方式。":
-    "Click a member card to view research interests, hobbies, current status or career destination, and contact information.",
   "教育与工作经历": "Education & Career",
   "展开": "Expand",
   "收起": "Collapse",
@@ -228,7 +226,7 @@ const languageText = {
     "The work identifies the microscopic origin of the high stiffness and strength of dual-metal MXenes and provides experimental and theoretical support for structural reliability assessment, failure prediction, and advanced energy and functional-material applications.",
   "研究配图：单层 Mo₂TiC₂Tₓ MXene 的原位拉伸测试与断裂响应":
     "Research graphic: in-situ tensile testing and fracture response of monolayer Mo₂TiC₂Tₓ MXene",
-  "恭喜苏婷同学顺利通过博士学位论文答辩！":
+  "祝贺苏婷同学顺利通过博士学位论文答辩！":
     "Congratulations to Su Ting on Successfully Passing Her Doctoral Dissertation Defense!",
   "热烈祝贺苏婷同学顺利完成博士学位论文答辩，为自己的博士阶段画上圆满句点。":
     "Warm congratulations to Su Ting on successfully completing her doctoral dissertation defense and bringing her doctoral journey to a wonderful conclusion.",
@@ -290,8 +288,8 @@ const languageText = {
     "An in-situ Push-to-Shear strategy and a directional shear device were developed for direct in-plane loading of monolayer Ti₃C₂Tₓ nanosheets inside an SEM. Molecular dynamics simulations, first-principles calculations, and electron microscopy were combined to analyze deformation and damage mechanisms.",
   "结果表明，单晶单层 Ti₃C₂Tₓ 的面内剪切模量达到 0.279 ± 0.007 TPa，剪切强度约为 18.6 GPa，平均剪切应变约为 8.6%，同时保持稳定的抗皱能力。研究进一步揭示了局部非均匀变形累积与原子层间强键合作用对剪切损伤和面外稳定性的影响，为二维柔性电子与微纳器件的结构设计和可靠性评价提供了直接实验依据。":
     "Single-crystal monolayer Ti₃C₂Tₓ exhibits an in-plane shear modulus of 0.279 ± 0.007 TPa, a shear strength of approximately 18.6 GPa, and an average shear strain of approximately 8.6%, while maintaining stable wrinkle resistance. The study further identifies the roles of localized nonuniform deformation and strong bonding between atomic layers in shear damage and out-of-plane stability. These results provide direct experimental evidence for structural design and reliability assessment of two-dimensional flexible electronics and micro- or nanoscale devices.",
-  "恭喜23级五位硕士毕业生顺利毕业": "Congratulations to the Five 2023 Master's Graduates",
-  "恭喜王祎珩、吴昊、董亚辉、徐渝京、史春浩顺利毕业，预祝苏婷顺利毕业！":
+  "祝贺23级五位硕士毕业生顺利毕业": "Congratulations to the Five 2023 Master's Graduates",
+  "祝贺王祎珩、吴昊、董亚辉、徐渝京、史春浩顺利毕业，预祝苏婷顺利毕业！":
     "Congratulations to Wang Yiheng, Wu Hao, Dong Yahui, Xu Yujing, and Shi Chunhao on their graduation. Best wishes to Su Ting for a successful graduation ahead.",
   "苏婷、万拾佳赴英国格拉斯哥参加第18届工程结构完整性评估国际会议":
     "Su Ting and Wan Shijia Attended the 18th International Conference on Engineering Structural Integrity Assessment",
@@ -703,6 +701,28 @@ const loadDeferredMedia = (root) => {
   });
 };
 
+const syncNewsListHeight = () => {
+  if (!newsList || newsPageCount <= 1) return;
+
+  const previousHiddenStates = newsItems.map((item) => item.hidden);
+  newsList.style.removeProperty("min-height");
+  let tallestPage = 0;
+
+  for (let page = 1; page <= newsPageCount; page += 1) {
+    const pageStart = (page - 1) * newsPageSize;
+    const pageEnd = pageStart + newsPageSize;
+    newsItems.forEach((item, index) => {
+      item.hidden = index < pageStart || index >= pageEnd;
+    });
+    tallestPage = Math.max(tallestPage, newsList.scrollHeight);
+  }
+
+  newsItems.forEach((item, index) => {
+    item.hidden = previousHiddenStates[index];
+  });
+  if (tallestPage > 0) newsList.style.minHeight = `${Math.ceil(tallestPage)}px`;
+};
+
 const applyLanguage = (root = document.body) => {
   applyAttributeLanguage();
   applyTextLanguage(root);
@@ -727,6 +747,7 @@ const applyLanguage = (root = document.body) => {
     button.setAttribute("aria-pressed", String(isActive));
   });
   syncNewsPaginationLanguage();
+  window.requestAnimationFrame(syncNewsListHeight);
 };
 
 languageToggle?.addEventListener("click", (event) => {
@@ -861,12 +882,15 @@ const renderHomeNewsTicker = () => {
 
 const renderNewsPage = (page) => {
   if (!newsItems.length) return;
-  activeNewsPage = Math.min(newsPageCount, Math.max(1, page));
+  const nextPage = Math.min(newsPageCount, Math.max(1, page));
+  const shouldAnimatePage = nextPage !== activeNewsPage && !shouldReduceMotion();
+  activeNewsPage = nextPage;
   const pageStart = (activeNewsPage - 1) * newsPageSize;
   const pageEnd = pageStart + newsPageSize;
 
   newsItems.forEach((item, index) => {
     item.hidden = index < pageStart || index >= pageEnd;
+    if (!item.hidden) item.style.setProperty("--news-page-order", String(index - pageStart));
   });
 
   newsPageNumbers?.querySelectorAll("[data-news-page]").forEach((button) => {
@@ -880,6 +904,18 @@ const renderNewsPage = (page) => {
   if (newsPageNext) newsPageNext.disabled = activeNewsPage === newsPageCount;
   syncNewsPaginationLanguage();
 
+  window.clearTimeout(newsPageAnimationTimer);
+  newsList?.classList.remove("is-page-transitioning");
+  newsList?.removeAttribute("aria-busy");
+  if (shouldAnimatePage && newsList) {
+    void newsList.offsetWidth;
+    newsList.classList.add("is-page-transitioning");
+    newsList.setAttribute("aria-busy", "true");
+    newsPageAnimationTimer = window.setTimeout(() => {
+      newsList.classList.remove("is-page-transitioning");
+      newsList.removeAttribute("aria-busy");
+    }, 620);
+  }
 };
 
 if (newsPagination && newsPageNumbers && newsPageCount > 1) {
@@ -905,8 +941,16 @@ newsPageNumbers?.addEventListener("click", (event) => {
   renderNewsPage(Number(button.dataset.newsPage));
 });
 
+syncNewsListHeight();
 renderHomeNewsTicker();
 renderNewsPage(1);
+
+window.addEventListener("resize", () => {
+  window.clearTimeout(newsListResizeTimer);
+  newsListResizeTimer = window.setTimeout(syncNewsListHeight, 140);
+});
+
+document.fonts?.ready.then(syncNewsListHeight);
 
 const setPublicationFilter = (year) => {
   paperItems.forEach((item) => {
