@@ -82,6 +82,7 @@ window.teamMembers = {
     },
     {
       "name": "陈汉",
+      "photo": "./assets/team/chen-han.png?v=20260910",
       "level": "25级硕士研究生",
       "degree": "master",
       "research": "晶体塑性有限元仿真",
@@ -122,6 +123,7 @@ window.teamMembers = {
     },
     {
       "name": "车子涵",
+      "photo": "./assets/team/che-zihan.jpg",
       "level": "26级硕士研究生",
       "degree": "master",
       "research": "",
@@ -141,6 +143,7 @@ window.teamMembers = {
     },
     {
       "name": "陈嘉仪",
+      "photo": "./assets/team/chen-jiayi.jpg?v=20260910",
       "level": "26级硕士研究生",
       "degree": "master",
       "research": "",

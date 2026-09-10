@@ -1027,6 +1027,9 @@ const createMemberAvatar = (member, large = false) => {
   if (member.photo) {
     const image = document.createElement("img");
     image.className = "member-avatar member-avatar-photo";
+    image.addEventListener("error", () => {
+      image.replaceWith(createMemberAvatar({ ...member, photo: "" }, large));
+    }, { once: true });
     image.src = member.photo;
     if (member.photoPosition) image.style.objectPosition = member.photoPosition;
     image.dataset.memberName = member.name;
