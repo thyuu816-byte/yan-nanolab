@@ -341,6 +341,7 @@ const languageText = {
   "研究方向配图来源：": "Research image credits:",
   "；实验装置图由课题组提供。": "; experimental apparatus image provided by the research group.",
   "论文封面：": "Paper cover:",
+  "研究图：": "Research figure:",
   "综述：微纳米尺度材料与结构的原位疲劳实验及性能研究进展.":
     "Review of in-situ fatigue experiments and properties of materials and structures at the micro- and nanoscale.",
   "李振凯, 闫亚宾*, 轩福贞*.": "Li Zhenkai, Yan Yabin*, Xuan Fuzhen*.",
@@ -356,6 +357,15 @@ const languageText = {
   "留言后台正在配置，请稍后再试。": "The message service is being configured. Please try again later.",
   "暂时未能提交，请检查网络后重试。": "The message could not be sent. Please check your connection and try again.",
   "重新提交": "Try Again",
+  "杨宸铭": "Yang Chenming",
+  "车子涵": "Che Zihan",
+  "徐嘉敏": "Xu Jiamin",
+  "陈嘉仪": "Chen Jiayi",
+  "26级硕士研究生": "2026 Master's Student",
+  "健身、骑行、羽毛球": "Fitness, cycling, badminton",
+  "游戏、绘画": "Gaming, drawing",
+  "游泳、羽毛球、旅游": "Swimming, badminton, travel",
+  "旅游、音乐": "Travel, music",
   "苏婷": "Su Ting",
   "万拾佳": "Wan Shijia",
   "余天昊": "Yu Tianhao",
@@ -557,7 +567,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "Wan Shijia presenting in a technical session"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026 conference exchange event"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026 plenary session"],
-      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia cover for single-crystal tin plasticity"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia single-crystal tin plasticity research figure"],
       ["#cej-hydrogel-news-modal .paper-detail-figure img", "alt", "Structural design, blade-coating process, and electromechanical performance of an SBCSA-enabled biomimetic lamellar conductive hydrogel"],
       ["#ijms-graphene-news-modal .paper-detail-figure img", "alt", "In-plane shear testing, size effects, and wrinkling of freestanding bilayer graphene"],
       ["#nano-research-mxene-news-modal .paper-detail-figure img", "alt", "In-situ tensile device, atomic structure, and fracture curve of monolayer Mo₂TiC₂Tₓ MXene"],
@@ -615,7 +625,7 @@ const attributeTranslations = {
       [".conference-gallery:not(.defense-gallery) figure:nth-child(3) img", "alt", "万拾佳作分会场报告"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(4) img", "alt", "ESIA18-ISSI2026会议交流活动现场"],
       [".conference-gallery:not(.defense-gallery) figure:nth-child(5) img", "alt", "ESIA18-ISSI2026大会报告现场"],
-      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究论文封面"],
+      ["#acta-tin-news-modal .paper-detail-figure img", "alt", "Acta Materialia 单晶锡微尺度塑性研究图"],
       ["#cej-hydrogel-news-modal .paper-detail-figure img", "alt", "SBCSA 策略制备仿生层状导电水凝胶的结构设计、刮涂过程与力电性能"],
       ["#ijms-graphene-news-modal .paper-detail-figure img", "alt", "悬空双层石墨烯面内剪切测试、尺寸效应和起皱行为研究图"],
       ["#nano-research-mxene-news-modal .paper-detail-figure img", "alt", "单层 Mo₂TiC₂Tₓ MXene 原位拉伸装置、原子结构和断裂曲线"],
@@ -1010,6 +1020,7 @@ const createMemberAvatar = (member, large = false) => {
     const image = document.createElement("img");
     image.className = "member-avatar member-avatar-photo";
     image.src = member.photo;
+    if (member.photoPosition) image.style.objectPosition = member.photoPosition;
     image.dataset.memberName = member.name;
     image.alt = currentLanguage === "en" ? `${languageText[member.name] || member.name} portrait` : `${member.name}头像`;
     image.loading = large ? "eager" : "lazy";
@@ -1025,7 +1036,7 @@ const createMemberAvatar = (member, large = false) => {
   return avatar;
 };
 
-const createDetailItem = (label, value) => {
+const createDetailItem = (label, value, preserveEmpty = false) => {
   const wrapper = document.createElement("div");
   wrapper.className = "member-detail-item";
 
@@ -1034,7 +1045,7 @@ const createDetailItem = (label, value) => {
   wrapper.appendChild(term);
 
   const description = document.createElement("dd");
-  description.textContent = value || "待补充";
+  description.textContent = preserveEmpty ? (value ?? "") : (value || "待补充");
   wrapper.appendChild(description);
 
   return wrapper;
@@ -1108,7 +1119,7 @@ const showMemberDetail = (group, member, trigger) => {
   const detailItems =
     group === "alumni"
       ? [
-          createDetailItem("毕业去向", member.destination),
+          createDetailItem("毕业去向", member.destination, true),
           createDetailItem("研究方向", member.research),
           createDetailItem("兴趣爱好", member.interests),
           createDetailItem("联系方式", member.contact, true),
@@ -1159,7 +1170,7 @@ const createMemberCard = (group, member) => {
   const name = document.createElement("strong");
   name.textContent = member.name;
   const level = document.createElement("span");
-  level.textContent = group === "alumni" ? member.destination || "待补充" : member.level || "资料待补充";
+  level.textContent = group === "alumni" ? member.destination ?? "" : member.level || "资料待补充";
   copy.append(name, level);
 
   const expandIcon = document.createElement("span");
