@@ -2865,7 +2865,7 @@
 }
 .profile-experience .timeline article:last-child {
   padding-bottom: 0;
-  border-left-color: transparent;
+  border-left-color: #dbe5e2;
 }
 .profile-experience .timeline article::before,
 .profile-experience .timeline article:first-child::before {
