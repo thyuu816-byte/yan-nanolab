@@ -2826,3 +2826,174 @@
     border-radius: 15px;
   }
 }
+
+/* Career history: quiet typography and a continuous timeline. */
+.profile-experience {
+  padding: 4px 0 4px 30px;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid rgba(31, 65, 70, .12);
+  border-radius: 0;
+  box-shadow: none;
+}
+.profile-experience .eyebrow {
+  margin: 0 0 24px;
+  color: #6c807f;
+  font-size: 10px;
+  letter-spacing: .19em;
+}
+.profile-experience .eyebrow::after { display: none; }
+.profile-experience .timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 0;
+  padding: 0 0 0 5px;
+}
+.profile-experience .timeline article,
+.profile-experience .timeline article:first-child,
+.profile-experience .timeline article:hover {
+  min-height: 0;
+  padding: 0 0 24px 24px;
+  background: transparent;
+  border: 0;
+  border-left: 1px solid #dbe5e2;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  transition: none;
+}
+.profile-experience .timeline article:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+.profile-experience .timeline article::before,
+.profile-experience .timeline article:first-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: -4px;
+  right: auto;
+  width: 7px;
+  height: 7px;
+  border: 0;
+  border-radius: 50%;
+  background: #bdceca;
+  box-shadow: 0 0 0 4px #fff;
+  opacity: 1;
+  mask-image: none;
+}
+.profile-experience .timeline article:first-child::before {
+  background: #24716b;
+  box-shadow: 0 0 0 4px #eaf3f0;
+}
+.profile-experience .timeline article > span {
+  display: block;
+  padding: 0;
+  color: #7b8988;
+  background: none;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .055em;
+  line-height: 1.5;
+}
+.profile-experience .timeline article:first-child > span { color: #24716b; }
+.profile-experience .timeline strong {
+  display: block;
+  margin: 5px 0 6px;
+  padding: 0;
+  color: #203d42;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+.profile-experience .timeline .career-institution,
+.profile-experience .timeline .career-department {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #586e72;
+}
+.profile-experience .timeline .career-department { color: #85918f; font-size: 11px; }
+@media (max-width: 1100px) {
+  .profile-experience { padding: 24px 0 0; border-left: 0; border-top: 1px solid #dbe5e2; }
+}
+@media (max-width: 640px) {
+  .profile-experience .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .profile-experience .timeline article,
+  .profile-experience .timeline article:first-child,
+  .profile-experience .timeline article:hover { padding: 0 0 0 15px; border-left: 1px solid #dbe5e2; }
+  .profile-experience .timeline strong { font-size: 14px; }
+  .profile-experience .timeline .career-institution { font-size: 12px; }
+}
+
+/* Use the full available width when the career section sits below the bio. */
+@media (min-width: 1101px) {
+  .profile-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .44fr);
+    gap: 28px;
+  }
+  .profile-experience { padding-left: 24px; }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  .profile-experience .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 32px;
+  }
+  .profile-experience .timeline article,
+  .profile-experience .timeline article:first-child,
+  .profile-experience .timeline article:hover {
+    padding: 0 0 0 22px;
+    border-left: 1px solid #dbe5e2;
+  }
+}
+
+/* Compact desktop biography: balance the text block with a two-column career grid. */
+@media (min-width: 1101px) {
+  .profile-layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(360px, 1fr);
+    gap: 24px;
+    padding: 28px;
+    align-items: start;
+  }
+  .profile-intro-top {
+    grid-template-columns: minmax(150px, 180px) minmax(0, 1fr);
+    gap: 22px;
+  }
+  .profile-experience { padding: 4px 0 0 24px; }
+  .profile-experience .eyebrow { margin-bottom: 22px; }
+  .profile-experience .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 22px;
+  }
+  .profile-experience .timeline article,
+  .profile-experience .timeline article:first-child,
+  .profile-experience .timeline article:hover {
+    padding: 0 0 0 16px;
+    border-left: 1px solid #dbe5e2;
+  }
+  .profile-experience .timeline strong { font-size: 15px; }
+  .profile-introduction .info-list { margin-top: 20px; }
+  .profile-introduction .info-list div { padding: 11px 0; }
+}
+@media (min-width: 1101px) {
+  .profile-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .profile-introduction { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, 1fr); gap: 28px; align-items: start; }
+  .profile-intro-top { grid-template-columns: 160px minmax(0, 1fr); gap: 22px; }
+  .profile-copy p, .profile-copy p:first-child { font-size: 14px; line-height: 1.8; }
+  .profile-copy p:first-child { margin-top: 0; }
+  .profile-introduction .info-list { margin-top: 0; }
+  .profile-introduction .info-list div { grid-template-columns: 62px minmax(0, 1fr); gap: 12px; }
+  .profile-introduction .info-list dd { font-size: 13px; }
+  .profile-experience { padding: 20px 0 0; border-left: 0; border-top: 1px solid #dbe5e2; }
+  .profile-experience .eyebrow { margin-bottom: 16px; }
+  .profile-experience .timeline { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+}
+@media (min-width: 1101px) {
+  .profile-introduction .info-list div { grid-template-columns: 76px minmax(0, 1fr); }
+  .profile-photo figcaption { padding: 0; background: none; border-radius: 0; font-size: 11px; line-height: 1.6; }
+}

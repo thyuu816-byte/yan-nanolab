@@ -118,7 +118,7 @@ window.teamMembers = {
       "research": "",
       "interests": "健身、骑行、羽毛球",
       "destination": "在读",
-      "contact": "18854259189@163.com"
+      "contact": "Available by request"
     },
     {
       "name": "车子涵",
@@ -127,7 +127,7 @@ window.teamMembers = {
       "research": "",
       "interests": "游戏、绘画",
       "destination": "在读",
-      "contact": "2792382635@qq.com"
+      "contact": "Available by request"
     },
     {
       "name": "徐嘉敏",
@@ -137,7 +137,7 @@ window.teamMembers = {
       "research": "",
       "interests": "游泳、羽毛球、旅游",
       "destination": "在读",
-      "contact": "2605925124@qq.com"
+      "contact": "Available by request"
     },
     {
       "name": "陈嘉仪",
@@ -146,7 +146,7 @@ window.teamMembers = {
       "research": "",
       "interests": "旅游、音乐",
       "destination": "在读",
-      "contact": "1447113077@qq.com"
+      "contact": "Available by request"
     }
   ],
   "alumni": [
