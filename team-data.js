@@ -123,7 +123,7 @@ window.teamMembers = {
     },
     {
       "name": "车子涵",
-      "photo": "./assets/team/che-zihan-portrait.jpg?v=20260911fix1",
+      "photo": "./assets/team/che-zihan.jpg?v=20260911",
       "level": "26级硕士研究生",
       "degree": "master",
       "research": "",
