@@ -1011,6 +1011,10 @@ a {
   grid-template-columns: 1fr;
 }
 
+.team-panel:not(.is-active) .degree-member-list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .member-roster::-webkit-scrollbar {
   width: 7px;
 }
