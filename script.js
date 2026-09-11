@@ -197,7 +197,7 @@ const languageText = {
   "在读": "Current",
   "毕业啦": "Alumni",
   "返回成员列表": "Back to Members",
-  "博士 / 硕博研究生": "Ph.D. / M.S.-Ph.D. Track Students",
+  "博士研究生": "Ph.D. Students",
   "硕士研究生": "Master's Students",
   "研究方向": "Research",
   "兴趣爱好": "Hobbies",
@@ -424,11 +424,11 @@ const languageText = {
   "向名芝": "Xiang Mingzhi",
   "李晟": "Li Sheng",
   "尹朦": "Yin Meng",
-  "21级硕博研究生": "2021 M.S.-Ph.D. Track Student",
-  "22级硕博研究生": "2022 M.S.-Ph.D. Track Student",
+  "21级博士研究生（硕博连读）": "2021 M.S.-Ph.D. Track Student",
+  "22级博士研究生（硕博连读）": "2022 M.S.-Ph.D. Track Student",
   "24级博士研究生": "2024 Ph.D. Student",
-  "24级硕博研究生": "2024 M.S.-Ph.D. Track Student",
-  "25级硕博研究生": "2025 M.S.-Ph.D. Track Student",
+  "24级博士研究生（硕博连读）": "2024 M.S.-Ph.D. Track Student",
+  "25级博士研究生（硕博连读）": "2025 M.S.-Ph.D. Track Student",
   "24级硕士研究生": "2024 Master's Student",
   "25级硕士研究生": "2025 Master's Student",
   "23级硕士研究生": "2023 Master's Student",
@@ -1243,7 +1243,7 @@ const renderTeam = () => {
       const masterMembers = members.filter((member) => member.degree === "master");
       list.classList.add("is-degree-columns");
       list.append(
-        createDegreeColumn(group, "博士 / 硕博研究生", doctoralMembers, "doctoral"),
+        createDegreeColumn(group, "博士研究生", doctoralMembers, "doctoral"),
         createDegreeColumn(group, "硕士研究生", masterMembers, "master")
       );
     } else {

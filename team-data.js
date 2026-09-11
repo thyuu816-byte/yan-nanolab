@@ -3,7 +3,7 @@ window.teamMembers = {
     {
       "name": "万拾佳",
       "photo": "./assets/team/wan-yijia.jpg?v=20260612opt",
-      "level": "22级硕博研究生",
+      "level": "22级博士研究生（硕博连读）",
       "degree": "doctoral",
       "research": "微纳米金属强度力学实验与晶体塑性仿真",
       "interests": "游戏、阅读",
@@ -23,7 +23,7 @@ window.teamMembers = {
     {
       "name": "张子勤",
       "photo": "./assets/team/zhang-ziqin.jpg?v=20260612opt",
-      "level": "24级硕博研究生",
+      "level": "24级博士研究生（硕博连读）",
       "degree": "doctoral",
       "research": "二维材料的原位力学研究",
       "interests": "跳舞、运动",
@@ -33,7 +33,7 @@ window.teamMembers = {
     {
       "name": "尚岩松",
       "photo": "./assets/team/shang-yansong.jpg?v=20260612opt",
-      "level": "25级硕博研究生",
+      "level": "25级博士研究生（硕博连读）",
       "degree": "doctoral",
       "research": "金属氢损伤",
       "interests": "健身、跳舞",
@@ -123,7 +123,7 @@ window.teamMembers = {
     },
     {
       "name": "车子涵",
-      "photo": "./assets/team/che-zihan.jpg?v=20260911",
+      "photo": "./assets/team/che-zihan-portrait.jpg?v=20260911fix1",
       "level": "26级硕士研究生",
       "degree": "master",
       "research": "",
@@ -156,7 +156,7 @@ window.teamMembers = {
     {
       "name": "苏婷",
       "photo": "./assets/team/su-ting.jpg?v=20260612opt",
-      "level": "21级硕博研究生",
+      "level": "21级博士研究生（硕博连读）",
       "degree": "doctoral",
       "research": "二维材料的原位力学研究",
       "interests": "瑜伽、旅游",
