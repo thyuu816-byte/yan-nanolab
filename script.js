@@ -39,6 +39,9 @@ let newsPageAnimationTimer;
 let newsListResizeTimer;
 
 const languageText = {
+  "祝贺万拾佳获博士研究生国家奖学金": "Congratulations to Wan Shijia on Receiving the National Scholarship for Doctoral Students",
+  "2026年 第三届长三角高校教师自制力学教学仪器设备创新大赛三等奖": "Third Prize, 3rd Yangtze River Delta University Faculty Innovation Competition for Self-developed Mechanics Teaching Instruments and Equipment, 2026",
+  "2026年 第四届全国大学生“力学+”创新实践研讨会优秀指导教师": "Outstanding Supervisor, 4th National University Students’ Mechanics+ Innovation and Practice Symposium, 2026",
   "祝贺李蕊玉团队获第十七届过程装备实践与创新赛全国总决赛一等奖": "Congratulations to Li Ruiyu’s Team on Winning First Prize at the National Finals of the 17th Process Equipment Practice and Innovation Competition",
   "祝贺孙思博团队获第四届全国大学生“力学+”创新实践研讨会三等奖": "Congratulations to Sun Sibo’s Team on Winning Third Prize at the 4th National University Students’ “Mechanics+” Innovation and Practice Symposium",
   "2026年8月，本科生李蕊玉等同学凭借作品“微纳智测——微纳米材料力学实验测试装置”，在2026年中国大学生机械工程创新创意大赛第十七届过程装备实践与创新赛全国总决赛中获一等奖。指导教师为王晓媛、闫亚宾。": "In August 2026, Li Ruiyu and fellow undergraduate students won first prize at the national finals of the 17th Process Equipment Practice and Innovation Competition, part of the 2026 Chinese University Students’ Mechanical Engineering Innovation and Creativity Competition. Their project, “Micro/Nano Intelligent Testing — A Mechanical Testing Device for Micro- and Nanoscale Materials,” was supervised by Xiaoyuan Wang and Yabin Yan.",
@@ -892,11 +895,13 @@ const renderHomeNewsTicker = () => {
       const sourceTitle = item.querySelector("strong");
       if (!sourceTime || !sourceTitle) return;
 
-      const link = document.createElement("a");
-      link.href = "#news";
+      const isTitleOnly = item.hasAttribute("data-news-title-only");
+      const link = document.createElement(isTitleOnly ? "span" : "a");
+      link.className = "hero-news-item";
+      if (!isTitleOnly) link.href = "#news";
       if (isDuplicate) {
         link.setAttribute("aria-hidden", "true");
-        link.tabIndex = -1;
+        if (!isTitleOnly) link.tabIndex = -1;
       }
 
       const time = document.createElement("time");

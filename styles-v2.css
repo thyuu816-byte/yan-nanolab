@@ -899,7 +899,7 @@
     font-size: 12px;
   }
 
-  .hero-news-track a {
+  .hero-news-track .hero-news-item {
     font-size: 13px;
   }
 
@@ -1843,7 +1843,8 @@
     letter-spacing: 0.02em;
   }
 
-  .news-card-button strong {
+  .news-card-button strong,
+  .news-card-text strong {
     font-size: 18px;
   }
 
@@ -2767,7 +2768,8 @@
     font-size: 11px;
   }
 
-  .news-card-button strong {
+  .news-card-button strong,
+  .news-card-text strong {
     display: -webkit-box;
     overflow: hidden;
     padding-right: 18px;
